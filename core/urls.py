@@ -23,6 +23,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
     path('api/v1/', include('apps.v1')),
+path("admin/", admin.site.urls)
 ]
 
 swagger_urlpatterns = [

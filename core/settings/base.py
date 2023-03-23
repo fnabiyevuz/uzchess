@@ -1,8 +1,8 @@
 import os
 from pathlib import Path
-from django.utils.translation import gettext_lazy as _
 
 import environ
+from django.utils.translation import gettext_lazy as _
 
 from core.ckeditor import *  # noqa
 from core.jazzmin import *  # noqa
@@ -27,7 +27,7 @@ ALLOWED_HOSTS = ["*"]
 
 # Application definition
 DJANGO_APPS = [
-    'jazzmin',
+    "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -50,10 +50,11 @@ CUSTOM_APPS = [
 THIRD_PARTY_APPS = [
     "rest_framework",
     "drf_yasg",
+    # "rest_framework_simplejwt",
     "rosetta",
     "ckeditor",
     "ckeditor_uploader",
-    'phonenumber_field',
+    "phonenumber_field",
     # "django_filters",
     # "rest_framework.authtoken",
     # "dj_rest_auth",
@@ -139,6 +140,7 @@ LANGUAGE_CODE = "en"
 TIME_ZONE = "Asia/Tashkent"
 
 USE_I18N = True
+
 USE_L10N = True
 USE_TZ = True
 
@@ -147,7 +149,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static"
-STATICFILES_DIRS = (BASE_DIR / "staticfiles", )
+STATICFILES_DIRS = (BASE_DIR / "staticfiles",)
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
@@ -157,25 +159,25 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-AUTH_USER_MODEL = 'users.CustomUser'
+AUTH_USER_MODEL = "users.CustomUser"
 
 
 LANGUAGES = (
-    ('en', _('English')),
-    ('uz', _('Uzbek')),
-    ('ru', _('Russian')),
+    ("en", _("English")),
+    ("uz", _("Uzbek")),
+    ("ru", _("Russian")),
 )
 
 # a locale path directory for the application where message files will reside:
 LOCALE_PATHS = [
-    BASE_DIR / 'locale/',
+    BASE_DIR / "locale/",
 ]
 
 CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': env.str('REDIS_URL', 'redis://localhost:6379/0'),
-        'TIMEOUT': 360,
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": env.str("REDIS_URL", "redis://localhost:6379/0"),
+        "TIMEOUT": 360,
         # 'OPTIONS': {
         #     'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         # }

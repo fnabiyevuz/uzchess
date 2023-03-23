@@ -1,7 +1,7 @@
 import random
-from django.utils.crypto import get_random_string
 
 from django.core.cache import cache
+from django.utils.crypto import get_random_string
 
 
 def generate_auth_session():
@@ -16,4 +16,3 @@ def generate_auth_session():
 def generate_verification_code():
     code = "".join([str(random.randint(0, 100) % 10) for _ in range(6)])
     return code
-

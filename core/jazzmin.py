@@ -2,11 +2,11 @@
 
 JAZZMIN_SETTINGS: dict = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "AyolUchun",
+    "site_title": "Uzchess",
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "AyolUchun",
+    "site_header": "Uzchess",
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "AyolUchun",
+    "site_brand": "Uzchess",
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "assets/img/logo-admin-white.svg",
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
@@ -18,12 +18,12 @@ JAZZMIN_SETTINGS: dict = {
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
     "site_icon": None,
     # Welcome text on the login screen
-    "welcome_sign": "Добро пожаловать на AyolUchun!",
+    "welcome_sign": "Добро пожаловать на Uzchess!",
     # Copyright on the footer
-    "copyright": "AyolUchun",
+    "copyright": "Uzchess",
     # The model admin to search from the search bar, search bar omitted if excluded
     "search_model": "users.User",
-    # Field name on users model that contains avatar ImageField/URLField/Charfield or a callable that receives the users
+    # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
     "user_avatar": None,
     ############
     # Top Menu #
@@ -45,10 +45,10 @@ JAZZMIN_SETTINGS: dict = {
     #############
     # User Menu #
     #############
-    # Additional links to include in the users menu on the top right ("app" url type is not allowed)
+    # Additional links to include in the user menu on the top right ("app" url type is not allowed)
     "usermenu_links": [
         # {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
-        {"model": "users.users"}
+        {"model": "users.user"}
     ],
     #############
     # Side Menu #
@@ -59,7 +59,7 @@ JAZZMIN_SETTINGS: dict = {
     "navigation_expanded": True,
     # Hide these apps when generating side menu e.g (auth)
     "hide_apps": [],
-    # Hide these models when generating side menu (e.g auth.users)
+    # Hide these models when generating side menu (e.g auth.user)
     "hide_models": [],
     # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
     "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
@@ -80,7 +80,7 @@ JAZZMIN_SETTINGS: dict = {
     # list of 5.13.0 free icon classes
     "icons": {
         "auth": "fas fa-users-cog",
-        "users.User": "fas fa-users",
+        "users.User": "fas fa-user",
         "auth.Group": "fas fa-users",
         "blog.Blog": "fas fa-blog",
         "blog.BlogCategory": "fas fa-list",
@@ -92,12 +92,12 @@ JAZZMIN_SETTINGS: dict = {
         "course.Lesson": "fas fa-chalkboard-teacher",
         "course.VideoLesson": "fas fa-video",
         "course.VideoView": "fas fa-eye",
-        "course.UserCourse": "fas fa-users-graduate",
+        "course.UserCourse": "fas fa-user-graduate",
         "feedback.Feedback": "fas fa-comment",
         "interview.Interview": "fas fa-microphone",
-        "users.Position": "fas fa-users-tag",
+        "users.Position": "fas fa-user-tag",
         "users.Notification": "fas fa-bell",
-        "users.Profile": "fas fa-users-circle",
+        "users.Profile": "fas fa-user-circle",
         "users.ReadNotification": "fas fa-bell-slash",
     },
     # Icons that are used when one is not manually specified

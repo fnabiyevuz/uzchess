@@ -1,6 +1,4 @@
-
 def send_sms(phone_number, message):
-
     print(f"\nSMS sender:\n{message}\n\n")
 
 

@@ -9,12 +9,9 @@ class SetPasswordSerializer(serializers.Serializer):
     password2 = serializers.CharField(min_length=8, max_length=128, required=True)
 
     def validate(self, data):
-
         # check both passwords are the same
-        if data['password'] != data['password2']:
+        if data["password"] != data["password2"]:
             # if passwords are different
-            raise ValidationError({
-                'error': _("Passwords does not match!")
-            })
+            raise ValidationError({"error": _("Passwords does not match!")})
 
         return data

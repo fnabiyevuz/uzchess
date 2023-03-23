@@ -8,5 +8,5 @@ urlpatterns = [
     path('library/', include('apps.library.urls')),
     path('main/', include('apps.main.urls')),
     path('news/', include('apps.news.urls')),
-    path('user/', include('apps.user.urls')),
+    # path('users/', include('apps.users.urls')),
 ]

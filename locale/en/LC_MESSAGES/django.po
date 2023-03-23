@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-21 23:00+0500\n"
+"POT-Creation-Date: 2023-03-22 12:17+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,42 +26,70 @@ msgstr ""
 msgid "Updated at"
 msgstr ""
 
-#: apps/users/models.py:14
-msgid "full name"
+#: apps/users/api_endpoints/registration/send_verification_code/serializers.py:25
+msgid "You can enter only one of phone number and email at a time!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/send_verification_code/serializers.py:32
+msgid "This number is already taken"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/send_verification_code/serializers.py:42
+msgid "This email is already taken"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/send_verification_code/serializers.py:49
+msgid "You must enter phone number or email!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/set_password/serializers.py:17
+msgid "Passwords does not match!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/set_password/views.py:26
+msgid "Invalid session!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/set_password/views.py:35
+msgid "User is not verified with this session!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/verify_code/views.py:27
+msgid "Verification code is expired. Or invalid phone/email entered!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/verify_code/views.py:34
+msgid "Incorrect Code!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/verify_code/views.py:45
+msgid "Your verification completed successfully!"
 msgstr ""
 
 #: apps/users/models.py:15
-msgid "date of birth"
+msgid "full name"
 msgstr ""
 
 #: apps/users/models.py:16
-msgid "email address"
+msgid "date of birth"
 msgstr ""
 
 #: apps/users/models.py:17
+msgid "email address"
+msgstr ""
+
+#: apps/users/models.py:18
 msgid "phone number"
 msgstr ""
 
-#: apps/users/models.py:20
+#: apps/users/models.py:22
 msgid "user"
 msgstr ""
 
-#: apps/users/models.py:21
+#: apps/users/models.py:23
 msgid "users"
 msgstr ""
 
-#: apps/users/models.py:28
+#: apps/users/models.py:42
 msgid "test name"
-msgstr ""
-
-#: core/settings/base.py:164
-msgid "English"
-msgstr ""
-
-#: core/settings/base.py:165
-msgid "Uzbek"
-msgstr ""
-
-#: core/settings/base.py:166
-msgid "Russian"
 msgstr ""

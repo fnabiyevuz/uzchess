@@ -23,7 +23,7 @@ JAZZMIN_SETTINGS: dict = {
     "copyright": "AyolUchun",
     # The model admin to search from the search bar, search bar omitted if excluded
     "search_model": "users.User",
-    # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
+    # Field name on users model that contains avatar ImageField/URLField/Charfield or a callable that receives the users
     "user_avatar": None,
     ############
     # Top Menu #
@@ -45,10 +45,10 @@ JAZZMIN_SETTINGS: dict = {
     #############
     # User Menu #
     #############
-    # Additional links to include in the user menu on the top right ("app" url type is not allowed)
+    # Additional links to include in the users menu on the top right ("app" url type is not allowed)
     "usermenu_links": [
         # {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
-        {"model": "users.user"}
+        {"model": "users.users"}
     ],
     #############
     # Side Menu #
@@ -59,7 +59,7 @@ JAZZMIN_SETTINGS: dict = {
     "navigation_expanded": True,
     # Hide these apps when generating side menu e.g (auth)
     "hide_apps": [],
-    # Hide these models when generating side menu (e.g auth.user)
+    # Hide these models when generating side menu (e.g auth.users)
     "hide_models": [],
     # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
     "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
@@ -80,7 +80,7 @@ JAZZMIN_SETTINGS: dict = {
     # list of 5.13.0 free icon classes
     "icons": {
         "auth": "fas fa-users-cog",
-        "users.User": "fas fa-user",
+        "users.User": "fas fa-users",
         "auth.Group": "fas fa-users",
         "blog.Blog": "fas fa-blog",
         "blog.BlogCategory": "fas fa-list",
@@ -92,12 +92,12 @@ JAZZMIN_SETTINGS: dict = {
         "course.Lesson": "fas fa-chalkboard-teacher",
         "course.VideoLesson": "fas fa-video",
         "course.VideoView": "fas fa-eye",
-        "course.UserCourse": "fas fa-user-graduate",
+        "course.UserCourse": "fas fa-users-graduate",
         "feedback.Feedback": "fas fa-comment",
         "interview.Interview": "fas fa-microphone",
-        "users.Position": "fas fa-user-tag",
+        "users.Position": "fas fa-users-tag",
         "users.Notification": "fas fa-bell",
-        "users.Profile": "fas fa-user-circle",
+        "users.Profile": "fas fa-users-circle",
         "users.ReadNotification": "fas fa-bell-slash",
     },
     # Icons that are used when one is not manually specified

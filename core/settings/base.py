@@ -43,7 +43,7 @@ CUSTOM_APPS = [
     "apps.library",
     "apps.main",
     "apps.news",
-    "apps.user",
+    "apps.users",
 ]
 
 THIRD_PARTY_APPS = [

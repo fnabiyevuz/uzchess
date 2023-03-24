@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from rest_framework.authtoken.models import Token
 from phonenumber_field.modelfields import PhoneNumberField
 
 from apps.common.models import TimeStampedModel
@@ -23,6 +24,13 @@ class CustomUser(AbstractUser, TimeStampedModel):
 
     def __str__(self):
         return self.username
+
+    def get_tokens(self):
+        token, created = Token.objects.get_or_create(user=self)
+        data = {
+            'token': token.key,
+        }
+        return data
 
     @classmethod
     def is_phone_number_available(cls, phone_number):

@@ -56,18 +56,23 @@ THIRD_PARTY_APPS = [
     "ckeditor_uploader",
     "phonenumber_field",
     # "django_filters",
-    # "rest_framework.authtoken",
-    # "dj_rest_auth",
+    "rest_framework.authtoken",
+    "dj_rest_auth",
     # "social_django",
-    # "allauth",
-    # "allauth.account",
-    # "allauth.socialaccount",
-    # "allauth.socialaccount.providers.google",
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "dj_rest_auth.registration",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
     # "allauth.socialaccount.providers.apple",
     # "corsheaders",
     "modeltranslation",
 ]
+
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

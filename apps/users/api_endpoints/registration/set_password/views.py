@@ -38,6 +38,9 @@ class SetPasswordAPIView(APIView):
         user.set_password(password)
         user.save()
 
+        # create token for this user
+        session_data.update(user.get_tokens())
+
         return Response(data=session_data, status=status.HTTP_201_CREATED)
 
 

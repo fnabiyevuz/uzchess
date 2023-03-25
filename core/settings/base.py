@@ -50,6 +50,7 @@ CUSTOM_APPS = [
 THIRD_PARTY_APPS = [
     "rest_framework",
     "drf_yasg",
+    "sorl.thumbnail",
     # "rest_framework_simplejwt",
     "rosetta",
     "ckeditor",
@@ -71,8 +72,6 @@ THIRD_PARTY_APPS = [
 ]
 
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
-
-SITE_ID = 1
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -188,3 +187,26 @@ CACHES = {
         # }
     }
 }
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
+# SOCIAL AUTH CONFIGURATIONS
+SOCIALACCOUNT_PROVIDERS = {  # noqa
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "offline",
+        },
+        'METHOD': 'oauth2',
+        'VERIFIED_EMAIL': False,
+    },
+}
+
+SITE_ID = 2

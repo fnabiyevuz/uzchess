@@ -3,6 +3,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from rest_framework.authtoken.models import Token
 from phonenumber_field.modelfields import PhoneNumberField
+from sorl.thumbnail.fields import ImageField
 
 from apps.common.models import TimeStampedModel
 from apps.users.choices import AUTH_TYPES
@@ -13,6 +14,7 @@ class CustomUser(AbstractUser, TimeStampedModel):
     first_name = None
     last_name = None
     full_name = models.CharField(max_length=100, verbose_name=_("full name"))
+    profile_pic = ImageField(null=True, blank=True, upload_to='images/profile_pics/%Y/%m/%d/')
     birth_date = models.DateTimeField(verbose_name=_("date of birth"), null=True, blank=True)
     email = models.EmailField(verbose_name=_("email address"), null=True, blank=True)
     phone_number = PhoneNumberField(region="UZ", verbose_name=_("phone number"), null=True, blank=True)

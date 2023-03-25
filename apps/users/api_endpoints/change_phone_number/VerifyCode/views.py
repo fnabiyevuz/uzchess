@@ -5,12 +5,14 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from apps.users.api_endpoints.change_phone_number.VerifyCode.serializers import VerifyCodeSerializer
+from apps.users.permissions import IsRegisteredViaPhoneNumber
 
 
 class VerifyCodeAPIView(APIView):
+    permission_classes = [IsRegisteredViaPhoneNumber]
 
     def post(self, request, *args, **kwargs):
-        serializer = VerifyCodeSerializer(data=request)
+        serializer = VerifyCodeSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
         # get variables
@@ -26,10 +28,17 @@ class VerifyCodeAPIView(APIView):
             )
 
         # check if given code is correct
-        if given_code == cache_data['code']:
-            user.phone_number = cache_data['new_phone_number']
-            user.username = user.phone_number
-            user.save()
+        if given_code != cache_data['code']:
+            # if given code is incorrect
+            return Response(
+                data={'message': _("Your verification code is incorrect!")},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # if given code is correctYour phone number changed successfully
+        user.phone_number = cache_data['new_phone_number']
+        user.username = user.phone_number
+        user.save()
 
         return Response(
             data={'message': _("Your phone number changed successfully")},

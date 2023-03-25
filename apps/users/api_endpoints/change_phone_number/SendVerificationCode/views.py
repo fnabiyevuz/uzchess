@@ -7,9 +7,11 @@ from rest_framework import status
 from apps.users.api_endpoints.change_phone_number.SendVerificationCode.serializers import SendVerificationCodeSerializer
 from apps.users.services.generators import generate_verification_code
 from apps.users.services.message_senders import send_verification_code_sms
+from apps.users.permissions import IsRegisteredViaPhoneNumber
 
 
 class SendVerificationCodeAPIView(APIView):
+    permission_classes = [IsRegisteredViaPhoneNumber]
 
     def post(self, request, *args, **kwargs):
         serializer = SendVerificationCodeSerializer(data=request.data, context={'request': request})

@@ -37,10 +37,8 @@ DJANGO_APPS = [
 ]
 
 CUSTOM_APPS = [
-    "apps.cart",
     "apps.common",
     "apps.course",
-    "apps.feedback",
     "apps.library",
     "apps.main",
     "apps.news",
@@ -66,6 +64,7 @@ THIRD_PARTY_APPS = [
     # "allauth.socialaccount.providers.apple",
     # "corsheaders",
     "modeltranslation",
+    "django_filters",
 ]
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
 
@@ -104,13 +103,9 @@ WSGI_APPLICATION = "core.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": env.str("DB_ENGINE"),
-        "NAME": env.str("DB_NAME"),
-        "USER": env.str("DB_USER"),
-        "PASSWORD": env.get_value("DB_PASSWORD"),
-        "HOST": env.str("DB_HOST"),
-        "PORT": env.str("DB_PORT"),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / '../db.sqlite3',
     }
 }
 
@@ -149,7 +144,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static"
-STATICFILES_DIRS = (BASE_DIR / "staticfiles",)
+STATICFILES_DIRS = (BASE_DIR / "../staticfiles",)
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
@@ -160,7 +155,6 @@ MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "users.CustomUser"
-
 
 LANGUAGES = (
     ("en", _("English")),
@@ -182,4 +176,12 @@ CACHES = {
         #     'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         # }
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated'],
+    'DATETIME_FORMAT': '%Y-%m-%d %H:%M',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100
 }

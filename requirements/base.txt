@@ -11,3 +11,4 @@ psycopg2-binary==2.9.5
 django-rosetta==0.9.8
 redis==4.5.2
 phonenumbers==8.13.7
+django-filter==22.1

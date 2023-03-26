@@ -14,3 +14,4 @@ phonenumbers==8.13.7
 dj-rest-auth==3.0.0
 django-allauth==0.52.0
 sorl-thumbnail==12.9.0
+django-filter==22.1

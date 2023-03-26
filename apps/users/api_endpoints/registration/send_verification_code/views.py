@@ -61,10 +61,6 @@ class SendVerificationCodeAPIView(APIView):
             data.update({"username": email})
 
         cache.set(session, data, 360)
-        temp = cache.get(session)
-        print(temp)
-        print(data)
-        print(type(data))
         data.update({"session": session})
         return Response(data=data, status=status.HTTP_200_OK)
 

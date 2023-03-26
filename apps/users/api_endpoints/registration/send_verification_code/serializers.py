@@ -16,10 +16,11 @@ class SendVerificationCodeSerializer(serializers.ModelSerializer):
         )
 
     def validate(self, data):
-        # check user send only one of phone number and email
+        # get variables
         phone_number = data.get("phone_number", None)
         email = data.get("email", None)
 
+        # check if user sent only one of phone number and email
         if phone_number is not None:
             if email is not None:
                 # if both of phone number and email is entered

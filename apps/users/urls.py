@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework.authtoken import views
-from apps.users.api_endpoints import registration, login, profile, change_phone_number, change_email
+from apps.users.api_endpoints import registration, login, profile, change_phone_number, change_email, reset_password
 
 app_name = "users"
 
@@ -17,6 +17,11 @@ urlpatterns = [
     # LOGIN
     path('login/', views.obtain_auth_token, name='login-username-password'),
     path("login/google/", login.GoogleLogin.as_view(), name='google-login'),
+
+    # RESET PASSWORD
+    path('reset-password/send-code/', reset_password.SendCodeAPIView.as_view(), name='send-reset-password-send-code'),
+    path('reset-password/verify-code/', reset_password.VerifyCodeAPIView.as_view(), name='verify-reset-password-code'),
+    path('reset-password/', reset_password.ResetPasswordAPIView.as_view(), name='reset-password'),
 
     # PROFILE
     path('profile/detail/', profile.GetProfileAPIView.as_view(), name='get-profile'),
@@ -45,6 +50,6 @@ urlpatterns = [
         'profile/change-email/verify-code/',
         change_email.VerifyCodeAPIView.as_view(),
         name='change-email-verify-code'
-    )
+    ),
 
 ]

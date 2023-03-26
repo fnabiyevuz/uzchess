@@ -1,3 +1,3 @@
-from .SendCode import *
-from .VerifyCode import *
-from .ResetPassword import *
+from .SendCode import *  # noqa
+from .VerifyCode import *  # noqa
+from .ResetPassword import *  # noqa

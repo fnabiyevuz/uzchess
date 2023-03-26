@@ -1,1 +1,1 @@
-from .social_auth import *
+from .social_auth import *  # noqa

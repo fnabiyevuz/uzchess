@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from apps.users.api_endpoints.registration.verify_code.serializers import \
+from apps.users.api_endpoints.registration.VerifyCode.serializers import \
     VerifyCodeSerializer
 
 

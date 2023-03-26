@@ -1,3 +1,3 @@
-from .GetProfile import *
-from .UpdateProfile import *
-from .ChangePassword import *
+from .GetProfile import *  # noqa
+from .UpdateProfile import *  # noqa
+from .ChangePassword import *  # noqa

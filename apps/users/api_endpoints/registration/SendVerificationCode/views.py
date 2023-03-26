@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from apps.users.api_endpoints.registration.send_verification_code.serializers import \
+from apps.users.api_endpoints.registration.SendVerificationCode.serializers import \
     SendVerificationCodeSerializer
 from apps.users.choices import VIA_EMAIL, VIA_PHONE_NUMBER
 from apps.users.services.generators import (generate_auth_session,

@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from apps.users.api_endpoints.change_phone_number.VerifyCode.serializers import VerifyCodeSerializer
+from apps.users.api_endpoints.change_email.VerifyCode.serializers import VerifyCodeSerializer
 from apps.users.permissions import IsRegisteredViaEmail
 
 

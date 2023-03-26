@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from apps.users.api_endpoints.change_phone_number.SendVerificationCode.serializers import SendVerificationCodeSerializer
+from apps.users.api_endpoints.change_email.SendVerificationCode.serializers import SendVerificationCodeSerializer
 from apps.users.services.generators import generate_verification_code
 from apps.users.services.message_senders import send_verification_code_email
 from apps.users.permissions import IsRegisteredViaEmail
@@ -20,7 +20,7 @@ class SendVerificationCodeAPIView(APIView):
         user = request.user
         new_email = serializer.validated_data['new_email']
 
-        if cache.get(new_email, None) is not None:
+        if cache.get(user.id, None) is not None:
             # If phone number already exists in cache
             return Response(
                 data={"error": "Verification code is already sent. Please wait for a while before continue"},

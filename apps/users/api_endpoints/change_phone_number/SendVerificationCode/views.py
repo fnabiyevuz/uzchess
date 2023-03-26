@@ -20,7 +20,7 @@ class SendVerificationCodeAPIView(APIView):
         user = request.user
         new_phone_number = serializer.validated_data['new_phone_number']
 
-        if cache.get(new_phone_number, None) is not None:
+        if cache.get(user.id, None) is not None:
             # If phone number already exists in cache
             return Response(
                 data={"error": "Verification code is already sent. Please wait for a while before continue"},

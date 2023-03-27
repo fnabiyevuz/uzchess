@@ -7,3 +7,4 @@ from .CourseList import *  # noqa
 from .CourseVideoLessonList import *  # noqa
 from .GenerateCertificate import *  # noqa
 from .Payment import *  # noqa
+from .FavouriteCourseList import *  # noqa

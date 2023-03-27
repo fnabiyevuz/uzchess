@@ -7,7 +7,6 @@ from rest_framework.views import APIView
 
 from apps.library.api_endpoints.CouponRegistration.serializers import CouponSerializer
 from apps.library.models import Coupon
-from django.shortcuts import get_object_or_404
 
 
 class CouponRegistrationView(APIView):
@@ -15,7 +14,7 @@ class CouponRegistrationView(APIView):
     serializer_class = CouponSerializer
 
     def post(self, request, format=None):
-        coupon_code = request.data['coupon_code']
+        coupon_code = request.data["coupon_code"]
         try:
             coupon = Coupon.objects.get(code=coupon_code)
         except Coupon.DoesNotExist:
@@ -23,4 +22,7 @@ class CouponRegistrationView(APIView):
         if coupon.expired_date > datetime.datetime.now():
             serializer = self.serializer_class(coupon).data
             return Response(serializer)
-        return Response({'error': 'Coupon was expired'})
+        return Response({"error": "Coupon was expired"})
+
+
+__all__ = ["CouponRegistrationView"]

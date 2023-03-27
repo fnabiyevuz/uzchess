@@ -8,7 +8,7 @@ from apps.news.models import News
 class NewsSerializer(ModelSerializer):
     class Meta:
         model = News
-        fields = ('id', 'title', 'slug', 'photo', 'context')
+        fields = ("id", "title", "slug", "photo", "context")
 
 
 class BookSerializerForNews(ModelSerializer):
@@ -16,7 +16,7 @@ class BookSerializerForNews(ModelSerializer):
 
     class Meta:
         model = Book
-        fields = ('id', 'title', 'author', 'image')
+        fields = ("id", "title", "author", "image")
 
 
 class NewsRetrieveSerializer(ModelSerializer):
@@ -27,4 +27,4 @@ class NewsRetrieveSerializer(ModelSerializer):
 
     class Meta:
         model = News
-        fields = ('id', 'title', 'photo', 'context', 'views', 'created_at')
+        fields = ("id", "title", "photo", "context", "views", "created_at")

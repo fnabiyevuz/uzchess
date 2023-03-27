@@ -1,12 +1,12 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 
-from apps.library.models import Cart, Coupon, CartItem, Book
+from apps.library.models import Book, Cart, CartItem
 
 
 class BookSerializer(ModelSerializer):
     class Meta:
         model = Book
-        fields = ('id', 'title', 'image', 'price', 'discount')
+        fields = ("id", "title", "image", "price", "discount")
 
 
 class CartItemSerializer(ModelSerializer):
@@ -14,7 +14,7 @@ class CartItemSerializer(ModelSerializer):
 
     class Meta:
         model = CartItem
-        fields = ('id', 'book', 'quantity', 'total')
+        fields = ("id", "book", "quantity", "total")
 
 
 class CartDetailSerializer(ModelSerializer):
@@ -27,4 +27,4 @@ class CartDetailSerializer(ModelSerializer):
 
     class Meta:
         model = Cart
-        fields = ('id', 'total', 'coupon', 'items')
+        fields = ("id", "total", "coupon", "items")

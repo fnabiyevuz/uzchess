@@ -9,3 +9,5 @@ class CartDetailApiView(RetrieveAPIView):
     queryset = Cart.objects.all()
     serializer_class = CartDetailSerializer
     permission_classes = [IsAuthenticated]
+
+__all__ = ["CartDetailApiView"]

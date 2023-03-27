@@ -4,7 +4,6 @@ from apps.library.models import (Author, Book, Cart, CartItem, Category,
                                  Coupon, FavouriteBook)
 
 
-
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ("id", "full_name")
@@ -40,11 +39,10 @@ class CartItemAdmin(admin.ModelAdmin):
 
 @admin.register(Coupon)
 class CouponAdmin(admin.ModelAdmin):
-
-    list_display = ('id', 'code', 'percent', 'min_amount', 'expired_date')
-    list_display_links = ('id', 'code')
+    list_display = ("id", "code", "percent", "min_amount", "expired_date")
+    list_display_links = ("id", "code")
 
 
 @admin.register(FavouriteBook)
 class FavouriteBookAdmin(admin.ModelAdmin):
-    list_display = ('id', 'book', 'user')
+    list_display = ("id", "book", "user")

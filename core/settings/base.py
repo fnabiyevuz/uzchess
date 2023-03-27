@@ -8,11 +8,11 @@ from core.ckeditor import *  # noqa
 from core.jazzmin import *  # noqa
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # READING ENV
 env = environ.Env()
-env.read_env(os.path.join(BASE_DIR, "../.env"))
+env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -109,7 +109,7 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / '../db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -148,7 +148,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static"
-STATICFILES_DIRS = (BASE_DIR / "../staticfiles",)
+STATICFILES_DIRS = (BASE_DIR / "staticfiles",)
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"

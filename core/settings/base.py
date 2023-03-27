@@ -8,11 +8,11 @@ from core.ckeditor import *  # noqa
 from core.jazzmin import *  # noqa
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # READING ENV
 env = environ.Env()
-env.read_env(os.path.join(BASE_DIR, "../.env"))
+env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -48,24 +48,25 @@ CUSTOM_APPS = [
 THIRD_PARTY_APPS = [
     "rest_framework",
     "drf_yasg",
-    # "rest_framework_simplejwt",
+    "sorl.thumbnail",
     "rosetta",
     "ckeditor",
     "ckeditor_uploader",
     "phonenumber_field",
-    # "django_filters",
-    # "rest_framework.authtoken",
-    # "dj_rest_auth",
-    # "social_django",
-    # "allauth",
-    # "allauth.account",
-    # "allauth.socialaccount",
-    # "allauth.socialaccount.providers.google",
-    # "allauth.socialaccount.providers.apple",
-    # "corsheaders",
+    "sorl.thumbnail",
+    "django_filters",
+    "rest_framework.authtoken",
+    "dj_rest_auth",
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "dj_rest_auth.registration",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
     "modeltranslation",
     "django_filters",
 ]
+
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
@@ -102,10 +103,21 @@ WSGI_APPLICATION = "core.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": env.str("DB_ENGINE"),
+#         "NAME": env.str("DB_NAME"),
+#         "USER": env.str("DB_USER"),
+#         "PASSWORD": env.get_value("DB_PASSWORD"),
+#         "HOST": env.str("DB_HOST"),
+#         "PORT": env.str("DB_PORT"),
+#     }
+# }
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "../db.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -144,7 +156,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static"
-STATICFILES_DIRS = (BASE_DIR / "../staticfiles",)
+STATICFILES_DIRS = (BASE_DIR / "staticfiles",)
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
@@ -180,8 +192,27 @@ CACHES = {
 
 REST_FRAMEWORK = {
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
-    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
     "DATETIME_FORMAT": "%Y-%m-%d %H:%M",
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 100,
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
+    ],
 }
+
+# SOCIAL AUTH CONFIGURATIONS
+SOCIALACCOUNT_PROVIDERS = {  # noqa
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "offline",
+        },
+        "METHOD": "oauth2",
+        "VERIFIED_EMAIL": False,
+    },
+}
+
+SITE_ID = 1

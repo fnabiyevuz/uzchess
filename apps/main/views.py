@@ -30,5 +30,3 @@ def get_rulesofuseing(request):
         return Response(serializer.data)
     except Exception as e:
         return Response({"Error": f"{e}"})
-
-

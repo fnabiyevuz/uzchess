@@ -10,6 +10,7 @@ urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
     path("api/v1/", include("apps.v1")),
     path("ckeditor/", include("ckeditor_uploader.urls")),
+    # path("api/v1/course/", include("apps.course.urls")),
 ]
 urlpatterns += swagger_urlpatterns
 urlpatterns += i18n_patterns(path("admin/", admin.site.urls))

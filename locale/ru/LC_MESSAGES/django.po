@@ -1,0 +1,350 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-27 08:00+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: apps/common/models.py:7
+msgid "Created at"
+msgstr ""
+
+#: apps/common/models.py:8
+msgid "Updated at"
+msgstr ""
+
+#: apps/library/models.py:15 apps/library/models.py:90 apps/main/models.py:24
+msgid "Full name"
+msgstr ""
+
+#: apps/library/models.py:26 apps/library/models.py:38 apps/main/models.py:37
+#: apps/news/models.py:11
+msgid "Title"
+msgstr ""
+
+#: apps/library/models.py:32
+msgid "Category"
+msgstr ""
+
+#: apps/library/models.py:33
+msgid "Categories"
+msgstr ""
+
+#: apps/library/models.py:37
+msgid "Author"
+msgstr ""
+
+#: apps/library/models.py:39
+msgid "Page"
+msgstr ""
+
+#: apps/library/models.py:40
+msgid "Published year"
+msgstr ""
+
+#: apps/library/models.py:41
+msgid "Description"
+msgstr ""
+
+#: apps/library/models.py:42
+msgid "Book image"
+msgstr ""
+
+#: apps/library/models.py:43
+msgid "Price"
+msgstr ""
+
+#: apps/library/models.py:44
+msgid "Discount price"
+msgstr ""
+
+#: apps/library/models.py:46
+msgid "Rate"
+msgstr ""
+
+#: apps/library/models.py:48
+msgid "Language"
+msgstr ""
+
+#: apps/library/models.py:50
+msgid "Level"
+msgstr ""
+
+#: apps/library/models.py:57
+msgid "Book"
+msgstr ""
+
+#: apps/library/models.py:58
+msgid "Books"
+msgstr ""
+
+#: apps/library/models.py:68
+msgid "Code"
+msgstr ""
+
+#: apps/library/models.py:69
+msgid "Percent"
+msgstr ""
+
+#: apps/library/models.py:70
+msgid "Minimal amount"
+msgstr ""
+
+#: apps/library/models.py:71
+msgid "Expired date"
+msgstr ""
+
+#: apps/library/models.py:77 apps/library/models.py:97
+msgid "Coupon"
+msgstr ""
+
+#: apps/library/models.py:78
+msgid "Coupons"
+msgstr ""
+
+#: apps/library/models.py:89 apps/users/models.py:24
+msgid "user"
+msgstr ""
+
+#: apps/library/models.py:91 apps/main/models.py:11 apps/main/models.py:25
+msgid "Phone number"
+msgstr ""
+
+#: apps/library/models.py:92
+msgid "Email address"
+msgstr ""
+
+#: apps/library/models.py:93
+msgid "Payment status"
+msgstr ""
+
+#: apps/library/models.py:95
+msgid "Payment Type"
+msgstr ""
+
+#: apps/library/models.py:98
+msgid "Order id"
+msgstr ""
+
+#: apps/library/models.py:108
+msgid "Cart"
+msgstr ""
+
+#: apps/library/models.py:109
+msgid "Carts"
+msgstr ""
+
+#: apps/library/models.py:115
+msgid "Quantity"
+msgstr ""
+
+#: apps/library/models.py:116
+msgid "Total"
+msgstr ""
+
+#: apps/library/models.py:129
+msgid "Cart Item"
+msgstr ""
+
+#: apps/library/models.py:130
+msgid "Cart Items"
+msgstr ""
+
+#: apps/library/models.py:141
+msgid "Favourite Book"
+msgstr ""
+
+#: apps/library/models.py:142
+msgid "Favourite Books"
+msgstr ""
+
+#: apps/main/models.py:9
+msgid "Working time"
+msgstr ""
+
+#: apps/main/models.py:10
+msgid "Email"
+msgstr ""
+
+#: apps/main/models.py:12
+msgid "Metro"
+msgstr ""
+
+#: apps/main/models.py:13
+msgid "Map"
+msgstr ""
+
+#: apps/main/models.py:26
+msgid "Text"
+msgstr ""
+
+#: apps/main/models.py:38
+msgid "Content"
+msgstr ""
+
+#: apps/news/models.py:12
+msgid "Slug"
+msgstr ""
+
+#: apps/news/models.py:13
+msgid "Photo"
+msgstr ""
+
+#: apps/news/models.py:14
+msgid "Context"
+msgstr ""
+
+#: apps/news/models.py:26
+msgid "Device ID"
+msgstr ""
+
+#: apps/news/models.py:27
+msgid "News"
+msgstr ""
+
+#: apps/news/models.py:28
+msgid "User"
+msgstr ""
+
+#: apps/users/api_endpoints/change_email/SendVerificationCode/serializers.py:19
+#: apps/users/api_endpoints/change_phone_number/SendVerificationCode/serializers.py:20
+#: apps/users/api_endpoints/profile/ChangePassword/serializers.py:18
+msgid "Your password is incorrect!"
+msgstr ""
+
+#: apps/users/api_endpoints/change_email/SendVerificationCode/serializers.py:25
+msgid "This email is unavailable"
+msgstr ""
+
+#: apps/users/api_endpoints/change_email/SendVerificationCode/views.py:42
+#: apps/users/api_endpoints/change_phone_number/SendVerificationCode/views.py:42
+msgid "Verification code was sent successfully!"
+msgstr ""
+
+#: apps/users/api_endpoints/change_email/VerifyCode/views.py:26
+#: apps/users/api_endpoints/change_phone_number/VerifyCode/views.py:26
+msgid "Verification code is expired!"
+msgstr ""
+
+#: apps/users/api_endpoints/change_email/VerifyCode/views.py:34
+#: apps/users/api_endpoints/change_phone_number/VerifyCode/views.py:34
+msgid "Your verification code is incorrect!"
+msgstr ""
+
+#: apps/users/api_endpoints/change_email/VerifyCode/views.py:44
+msgid "Your email changed successfully"
+msgstr ""
+
+#: apps/users/api_endpoints/change_phone_number/SendVerificationCode/serializers.py:26
+msgid "This phone number is unavailable"
+msgstr ""
+
+#: apps/users/api_endpoints/change_phone_number/VerifyCode/views.py:44
+msgid "Your phone number changed successfully"
+msgstr ""
+
+#: apps/users/api_endpoints/profile/ChangePassword/serializers.py:24
+#: apps/users/api_endpoints/registration/SetPassword/serializers.py:15
+#: apps/users/api_endpoints/reset_password/ResetPassword/serializers.py:15
+msgid "Passwords does not match!"
+msgstr ""
+
+#: apps/users/api_endpoints/profile/ChangePassword/views.py:25
+msgid "You changed your password successfully!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:29
+msgid "You can enter only one of phone number and email at a time!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:36
+msgid "This number is already taken"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:44
+msgid "This email is already taken"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:51
+msgid "You must enter phone number or email!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/SetPassword/views.py:25
+#: apps/users/api_endpoints/reset_password/ResetPassword/views.py:26
+msgid "Invalid session!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/SetPassword/views.py:32
+#: apps/users/api_endpoints/reset_password/ResetPassword/views.py:33
+msgid "User is not verified with this session!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/VerifyCode/views.py:26
+msgid "Verification code is expired. Or invalid phone/email entered!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/VerifyCode/views.py:32
+msgid "Incorrect Code!"
+msgstr ""
+
+#: apps/users/api_endpoints/registration/VerifyCode/views.py:41
+msgid "Your verification completed successfully!"
+msgstr ""
+
+#: apps/users/api_endpoints/reset_password/ResetPassword/views.py:42
+msgid "Reset password successfully"
+msgstr ""
+
+#: apps/users/api_endpoints/reset_password/SendCode/serializers.py:23
+msgid "No user was found with this phone number/email"
+msgstr ""
+
+#: apps/users/api_endpoints/reset_password/SendCode/views.py:26
+msgid "Code is already sent. Please, wait a while before continue"
+msgstr ""
+
+#: apps/users/api_endpoints/reset_password/VerifyCode/views.py:27
+msgid "Code is expired or Incorrect phone number/email was entered"
+msgstr ""
+
+#: apps/users/api_endpoints/reset_password/VerifyCode/views.py:35
+msgid "Incorrect code!"
+msgstr ""
+
+#: apps/users/api_endpoints/reset_password/VerifyCode/views.py:45
+msgid "Confirmed successfully!"
+msgstr ""
+
+#: apps/users/models.py:16
+msgid "full name"
+msgstr ""
+
+#: apps/users/models.py:18
+msgid "date of birth"
+msgstr ""
+
+#: apps/users/models.py:19
+msgid "email address"
+msgstr ""
+
+#: apps/users/models.py:20
+msgid "phone number"
+msgstr ""
+
+#: apps/users/models.py:25
+msgid "users"
+msgstr ""

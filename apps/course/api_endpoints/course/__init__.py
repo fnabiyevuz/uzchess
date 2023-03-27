@@ -1,0 +1,9 @@
+from .CourseCommentComplaintCreate import *  # noqa
+from .CourseCommentComplaintList import *  # noqa
+from .CourseCommentCreate import *  # noqa
+from .CourseCommentList import *  # noqa
+from .CourseDetail import *  # noqa
+from .CourseList import *  # noqa
+from .CourseVideoLessonList import *  # noqa
+from .GenerateCertificate import *  # noqa
+from .Payment import *  # noqa

@@ -4,7 +4,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from apps.library.api_endpoints.CartUpdate.serializers import CartUpdateSerializer
+from apps.library.api_endpoints.CartUpdate.serializers import \
+    CartUpdateSerializer
 from apps.library.models import Cart
 
 
@@ -31,4 +32,4 @@ class CartUpdateView(APIView):
         return Response(serializer)
 
 
-__all__ = ['CartUpdateView']
+__all__ = ["CartUpdateView"]

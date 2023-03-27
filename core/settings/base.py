@@ -48,7 +48,6 @@ CUSTOM_APPS = [
 THIRD_PARTY_APPS = [
     "rest_framework",
     "drf_yasg",
-    "sorl.thumbnail",
     "rosetta",
     "ckeditor",
     "ckeditor_uploader",
@@ -64,7 +63,6 @@ THIRD_PARTY_APPS = [
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
     "modeltranslation",
-    "django_filters",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS

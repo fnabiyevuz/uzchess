@@ -52,7 +52,6 @@ THIRD_PARTY_APPS = [
     "ckeditor",
     "ckeditor_uploader",
     "phonenumber_field",
-    "sorl.thumbnail",
     "django_filters",
     "rest_framework.authtoken",
     "dj_rest_auth",

@@ -6,6 +6,7 @@ from apps.library.models import Cart
 
 
 class GetOrdersListAPIView(ListAPIView):
+    queryset = Cart.objects.all()
     serializer_class = GetOrdersListSerializer
     permission_classes = [IsAuthenticated]
 
@@ -13,6 +14,9 @@ class GetOrdersListAPIView(ListAPIView):
         """
         Get orders queryset that were ordered by request user
         """
+        if not self.request:
+            return Cart.objects.none()
+
         orders = Cart.objects.filter(user=self.request.user)
 
         return orders

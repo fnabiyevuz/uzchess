@@ -31,7 +31,6 @@ class CourseVideoLessonListSerializer(serializers.ModelSerializer):
             "chapter",
             "video_duration",
             "is_bought",
-            "video",
             "last_watched_time",
             "video_thumbnail",
         ]

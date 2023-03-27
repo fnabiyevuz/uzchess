@@ -1,12 +1,12 @@
 from rest_framework.generics import ListAPIView
 from rest_framework.permissions import IsAuthenticated
 
-from apps.library.api_endpoints.BookList.serializers import \
-    BookSerializer as BookListSerializer
-from apps.library.models import Book
 from apps.course.api_endpoints.course.CourseList.serializers import \
     CourseListSerializer
 from apps.course.models import Course
+from apps.library.api_endpoints.BookList.serializers import \
+    BookSerializer as BookListSerializer
+from apps.library.models import Book
 
 
 class GetFavouriteBooksAPIView(ListAPIView):

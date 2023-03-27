@@ -5,7 +5,7 @@ from django.utils.safestring import mark_safe
 from apps.course.models import (Certificate, Chapter, Course, CourseCategory,
                                 CourseComment, CourseCommentComplaint,
                                 CourseLevel, Payment, UserCourse, VideoLesson,
-                                VideoUserViews)
+                                VideoUserViews, FavouriteCourse)
 
 
 class CourseCategoryAdmin(admin.ModelAdmin):
@@ -195,6 +195,18 @@ class CertificateAdmin(admin.ModelAdmin):
     get_html_photo.short_description = "Certificate_Image"
 
 
+class FavouriteCourseAdmin(admin.ModelAdmin):
+    list_display = ("id", "user", "course")
+    list_display_links = ("id", "user", "course")
+    search_fields = ("user", "course")
+    # list_editable = ('is_published',)
+    # list_filter = ('gender',)
+    # prepopulated_fields = {"slug": ("name",)}
+    fields = ("user", "course", "created_at", "updated_at")
+    readonly_fields = ("created_at", "updated_at")
+    save_on_top = True
+
+
 admin.site.register(CourseCategory, CourseCategoryAdmin)
 admin.site.register(CourseLevel, CourseLevelAdmin)
 admin.site.register(Course, CourseAdmin)
@@ -206,3 +218,4 @@ admin.site.register(CourseCommentComplaint, CourseCommentComplaintAdmin)
 admin.site.register(Payment, PaymentAdmin)
 admin.site.register(UserCourse, UserCourseAdmin)
 admin.site.register(Certificate, CertificateAdmin)
+admin.site.register(FavouriteCourse, FavouriteCourseAdmin)

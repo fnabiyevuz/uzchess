@@ -11,7 +11,7 @@ psycopg2-binary==2.9.5
 django-rosetta==0.9.8
 redis==4.5.2
 phonenumbers==8.13.7
-sorl-thumbnail==12.9.0
+
 django-filter==22.1
 django-qrcode==0.3
 pdf2image==1.16.3

@@ -4,3 +4,4 @@ from .GetOrders import *  # noqa
 from .GetProfile import *  # noqa
 from .Logout import *  # noqa
 from .UpdateProfile import *  # noqa
+from .GetPurchasedCourses import *  # noqa

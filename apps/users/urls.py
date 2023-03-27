@@ -26,6 +26,12 @@ urlpatterns = [
     path("profile/detail/", profile.GetProfileAPIView.as_view(), name="get-profile"),
     path("profile/update/", profile.UpdateProfileAPIView.as_view(), name="update-profile"),
     path("profile/change-password/", profile.ChangePasswordAPIView.as_view(), name="change-password"),
+    # purchased courses
+    path(
+        "profile/purchased-courses/",
+        profile.GetPurchasedCoursesAPIView.as_view(),
+        name="profile-purchased-courses"
+    ),
     # favourite items
     path("profile/favourite-books/", profile.GetFavouriteBooksAPIView.as_view(), name="favourite-books"),
     path("profile/favourite-courses/", profile.GetFavouriteCoursesAPIView.as_view(), name="favourite-courses"),
@@ -52,6 +58,8 @@ urlpatterns = [
         name="change-email-send-verification-code",
     ),
     path(
-        "profile/change-email/verify-code/", change_email.VerifyCodeAPIView.as_view(), name="change-email-verify-code"
+        "profile/change-email/verify-code/",
+        change_email.VerifyCodeAPIView.as_view(),
+        name="change-email-verify-code"
     ),
 ]

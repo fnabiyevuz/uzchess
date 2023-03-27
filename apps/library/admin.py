@@ -26,9 +26,9 @@ class BookAdmin(admin.ModelAdmin):
 
 @admin.register(Cart)
 class CartAdmin(admin.ModelAdmin):
-    list_display = ("id", "user", "phone", "payment_status", "payment_type", "total")
+    list_display = ("id", "user", "status")
     list_display_links = ("id", "user")
-    list_filter = ("payment_status", "payment_type")
+    list_filter = ("status",)
 
 
 @admin.register(CartItem)

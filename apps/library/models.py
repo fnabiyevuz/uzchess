@@ -7,7 +7,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 from apps.common.models import TimeStampedModel
 from apps.library.choices import (LanguageType, LevelType, PaymentStatus,
-                                  PaymentType)
+                                  PaymentType, CartStatus)
 from apps.users.models import CustomUser
 
 
@@ -90,18 +90,9 @@ class Coupon(TimeStampedModel):
 
 class Cart(TimeStampedModel):
     user = models.ForeignKey(CustomUser, verbose_name=_("user"), on_delete=models.CASCADE)
-    full_name = models.CharField(verbose_name=_("Full name"), max_length=255, null=True, blank=True)
-    phone = PhoneNumberField(region="UZ", verbose_name=_("Phone number"), null=True, blank=True)
-    email = models.EmailField(verbose_name=_("Email address"), null=True, blank=True)
-    payment_status = models.CharField(
-        verbose_name=_("Payment status"), max_length=25, choices=PaymentStatus.choices, default=PaymentStatus.PENDING
+    status = models.CharField(
+        verbose_name=_("Status"), max_length=25, choices=CartStatus.choices, default=CartStatus.PENDING
     )
-    payment_type = models.CharField(
-        verbose_name=_("Payment Type"), max_length=25, choices=PaymentType.choices, default=PaymentType.CLICK
-    )
-    coupon = models.ForeignKey(Coupon, on_delete=models.SET_NULL, verbose_name=_("Coupon"), null=True, blank=True)
-    order_id = models.CharField(verbose_name=_("Order id"), max_length=11, null=True, blank=True)
-
     @property
     def total(self):
         return sum([cart_item.total for cart_item in self.cartitem_set.all()])
@@ -133,6 +124,20 @@ class CartItem(models.Model):
     class Meta:
         verbose_name = _("Cart Item")
         verbose_name_plural = _("Cart Items")
+
+
+class Order(TimeStampedModel):
+    full_name = models.CharField(verbose_name=_("Full name"), max_length=255, null=True, blank=True)
+    phone = PhoneNumberField(region="UZ", verbose_name=_("Phone number"), null=True, blank=True)
+    email = models.EmailField(verbose_name=_("Email address"), null=True, blank=True)
+    payment_status = models.CharField(
+        verbose_name=_("Payment status"), max_length=25, choices=PaymentStatus.choices, default=PaymentStatus.PENDING
+    )
+    payment_type = models.CharField(
+        verbose_name=_("Payment Type"), max_length=25, choices=PaymentType.choices, default=PaymentType.CLICK
+    )
+    coupon = models.ForeignKey(Coupon, on_delete=models.SET_NULL, verbose_name=_("Coupon"), null=True, blank=True)
+    order_id = models.CharField(verbose_name=_("Order id"), max_length=11, null=True, blank=True)
 
 
 class FavouriteBook(TimeStampedModel):

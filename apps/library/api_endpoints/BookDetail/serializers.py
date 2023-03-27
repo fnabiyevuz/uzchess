@@ -1,6 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 
-from apps.library.api_endpoints.BookList.serializers import AuthorSerializer, CategorySerializer
+from apps.library.api_endpoints.BookList.serializers import (
+    AuthorSerializer, CategorySerializer)
 from apps.library.models import Book
 
 
@@ -10,4 +11,18 @@ class BookDetailSerializer(ModelSerializer):
 
     class Meta:
         model = Book
-        fields = ('id', 'title', 'author', 'image', 'price', 'discount', 'level', 'category', 'rate', 'language', 'description', 'published_year', 'page')
+        fields = (
+            "id",
+            "title",
+            "author",
+            "image",
+            "price",
+            "discount",
+            "level",
+            "category",
+            "rate",
+            "language",
+            "description",
+            "published_year",
+            "page",
+        )

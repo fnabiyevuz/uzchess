@@ -6,4 +6,4 @@ from apps.library.models import Cart
 class CartSerializer(ModelSerializer):
     class Meta:
         model = Cart
-        fields = ('id', 'user')
+        fields = ("id", "user")

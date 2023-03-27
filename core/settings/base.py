@@ -49,23 +49,20 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "drf_yasg",
     "sorl.thumbnail",
-    # "rest_framework_simplejwt",
     "rosetta",
     "ckeditor",
     "ckeditor_uploader",
     "phonenumber_field",
-    # "django_filters",
+    "sorl.thumbnail",
+    "django_filters",
     "rest_framework.authtoken",
     "dj_rest_auth",
-    # "social_django",
     "django.contrib.sites",
     "allauth",
     "allauth.account",
     "dj_rest_auth.registration",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
-    # "allauth.socialaccount.providers.apple",
-    # "corsheaders",
     "modeltranslation",
     "django_filters",
 ]
@@ -106,10 +103,21 @@ WSGI_APPLICATION = "core.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": env.str("DB_ENGINE"),
+#         "NAME": env.str("DB_NAME"),
+#         "USER": env.str("DB_USER"),
+#         "PASSWORD": env.get_value("DB_PASSWORD"),
+#         "HOST": env.str("DB_HOST"),
+#         "PORT": env.str("DB_PORT"),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -183,12 +191,13 @@ CACHES = {
 }
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
+    "DATETIME_FORMAT": "%Y-%m-%d %H:%M",
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 100,
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
     ],
-    'DATETIME_FORMAT': '%Y-%m-%d %H:%M',
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 100
 }
 
 # SOCIAL AUTH CONFIGURATIONS
@@ -201,8 +210,8 @@ SOCIALACCOUNT_PROVIDERS = {  # noqa
         "AUTH_PARAMS": {
             "access_type": "offline",
         },
-        'METHOD': 'oauth2',
-        'VERIFIED_EMAIL': False,
+        "METHOD": "oauth2",
+        "VERIFIED_EMAIL": False,
     },
 }
 

@@ -2,16 +2,20 @@ from django.core.cache import cache
 from django.utils.translation import gettext_lazy as _
 from rest_framework import status
 from rest_framework.response import Response
+from rest_framework.generics import get_object_or_404
 from rest_framework.views import APIView
+from drf_yasg.utils import swagger_auto_schema
 
-from apps.users.api_endpoints.registration.set_password.serializers import \
-    SetPasswordSerializer
+from apps.users.api_endpoints.reset_password.ResetPassword.serializers import \
+    ResetPasswordSerializer
 from apps.users.models import CustomUser
 
 
-class SetPasswordAPIView(APIView):
+class ResetPasswordAPIView(APIView):
+
+    @swagger_auto_schema(request_body=ResetPasswordSerializer)
     def post(self, request, *arg, **kwargs):
-        serializer = SetPasswordSerializer(data=request.data)
+        serializer = ResetPasswordSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
         # get values from request data
@@ -25,7 +29,7 @@ class SetPasswordAPIView(APIView):
             return Response(data={"error": _("Invalid session!")}, status=status.HTTP_400_BAD_REQUEST)
 
         # check user is verified with this session
-        is_verified = session_data.pop("is_verified", None)
+        is_verified = session_data.get("is_verified", None)
         if is_verified is None:
             # if user is not verified
             return Response(
@@ -33,12 +37,14 @@ class SetPasswordAPIView(APIView):
             )
 
         # if everything is OKAY
-        print(session_data)
-        user = CustomUser(**session_data)
+        user = get_object_or_404(CustomUser.objects.all(), id=session_data['user_id'])
         user.set_password(password)
         user.save()
 
-        return Response(data=session_data, status=status.HTTP_201_CREATED)
+        return Response(
+            data={'message': _("Reset password successfully")},
+            status=status.HTTP_200_OK
+        )
 
 
-__all__ = ["SetPasswordAPIView"]
+__all__ = ["ResetPasswordAPIView"]

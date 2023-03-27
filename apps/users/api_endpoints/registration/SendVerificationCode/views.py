@@ -2,8 +2,9 @@ from django.core.cache import cache
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from drf_yasg.utils import swagger_auto_schema
 
-from apps.users.api_endpoints.registration.send_verification_code.serializers import \
+from apps.users.api_endpoints.registration.SendVerificationCode.serializers import \
     SendVerificationCodeSerializer
 from apps.users.choices import VIA_EMAIL, VIA_PHONE_NUMBER
 from apps.users.services.generators import (generate_auth_session,
@@ -13,6 +14,8 @@ from apps.users.services.message_senders import (send_verification_code_email,
 
 
 class SendVerificationCodeAPIView(APIView):
+
+    @swagger_auto_schema(request_body=SendVerificationCodeSerializer)
     def post(self, request, *args, **kwargs):
         serializer = SendVerificationCodeSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -61,10 +64,6 @@ class SendVerificationCodeAPIView(APIView):
             data.update({"username": email})
 
         cache.set(session, data, 360)
-        temp = cache.get(session)
-        print(temp)
-        print(data)
-        print(type(data))
         data.update({"session": session})
         return Response(data=data, status=status.HTTP_200_OK)
 

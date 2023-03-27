@@ -48,24 +48,28 @@ CUSTOM_APPS = [
 THIRD_PARTY_APPS = [
     "rest_framework",
     "drf_yasg",
+    "sorl.thumbnail",
     # "rest_framework_simplejwt",
     "rosetta",
     "ckeditor",
     "ckeditor_uploader",
     "phonenumber_field",
     # "django_filters",
-    # "rest_framework.authtoken",
-    # "dj_rest_auth",
+    "rest_framework.authtoken",
+    "dj_rest_auth",
     # "social_django",
-    # "allauth",
-    # "allauth.account",
-    # "allauth.socialaccount",
-    # "allauth.socialaccount.providers.google",
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "dj_rest_auth.registration",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
     # "allauth.socialaccount.providers.apple",
     # "corsheaders",
     "modeltranslation",
     "django_filters",
 ]
+
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
@@ -179,9 +183,27 @@ CACHES = {
 }
 
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
-    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated'],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
     'DATETIME_FORMAT': '%Y-%m-%d %H:%M',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 100
 }
+
+# SOCIAL AUTH CONFIGURATIONS
+SOCIALACCOUNT_PROVIDERS = {  # noqa
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "offline",
+        },
+        'METHOD': 'oauth2',
+        'VERIFIED_EMAIL': False,
+    },
+}
+
+SITE_ID = 1

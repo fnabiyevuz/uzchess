@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.library.models import Book, Author, Category, Cart, CartItem, Coupon
+from apps.library.models import Book, Author, Category, Cart, CartItem, Coupon, FavouriteBook
 
 
 @admin.register(Author)
@@ -40,3 +40,8 @@ class CartItemAdmin(admin.ModelAdmin):
 class CouponAdmin(admin.ModelAdmin):
     list_display = ('id', 'code', 'percent', 'min_amount', 'expired_date')
     list_display_links = ('id', 'code')
+
+
+@admin.register(FavouriteBook)
+class FavouriteBookAdmin(admin.ModelAdmin):
+    list_display = ('id', 'book', 'user')

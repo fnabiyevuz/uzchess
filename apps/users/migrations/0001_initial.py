@@ -5,6 +5,7 @@ import django.contrib.auth.validators
 from django.db import migrations, models
 import django.utils.timezone
 import phonenumber_field.modelfields
+import sorl.thumbnail.fields
 
 
 class Migration(migrations.Migration):
@@ -30,6 +31,7 @@ class Migration(migrations.Migration):
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Created at')),
                 ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Updated at')),
                 ('full_name', models.CharField(max_length=100, verbose_name='full name')),
+                ('profile_pic', sorl.thumbnail.fields.ImageField(blank=True, null=True, upload_to='images/profile_pics/%Y/%m/%d/')),
                 ('birth_date', models.DateTimeField(blank=True, null=True, verbose_name='date of birth')),
                 ('email', models.EmailField(blank=True, max_length=254, null=True, verbose_name='email address')),
                 ('phone_number', phonenumber_field.modelfields.PhoneNumberField(blank=True, max_length=128, null=True, region='UZ', verbose_name='phone number')),

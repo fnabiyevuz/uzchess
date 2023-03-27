@@ -25,6 +25,7 @@ class PaymentType(models.TextChoices):
     CLICK = "Click"
     UZUMBANK = "Uzum Bank"
 
+
 class CartStatus(models.TextChoices):
     PENDING = "Pending"
     CHECKOUT = "Checkout"

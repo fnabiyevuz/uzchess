@@ -1,7 +1,8 @@
 from rest_framework.generics import RetrieveUpdateAPIView
 from rest_framework.permissions import IsAuthenticated
 
-from apps.library.api_endpoints.CartItemUpdate.serializers import CartItemUpdateSerializer
+from apps.library.api_endpoints.CartItemUpdate.serializers import \
+    CartItemUpdateSerializer
 from apps.library.models import CartItem
 
 

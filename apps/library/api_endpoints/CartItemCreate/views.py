@@ -12,6 +12,7 @@ class CartItemCreateApiView(CreateAPIView):
     permission_classes = [IsAuthenticated]
     serializer_class = CartItemCreateSerializer
     queryset = CartItem.objects.all()
+
     def create(self, request, *args, **kwargs):
         cart, created = Cart.objects.get_or_create(user=request.user, status=CartStatus.PENDING)
         cart_item = CartItem.objects.create(cart=cart, book_id=request.data["book_id"])

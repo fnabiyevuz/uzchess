@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-27 08:00+0500\n"
-"PO-Revision-Date: 2023-03-27 10:16+0500\n"
+"POT-Creation-Date: 2023-03-27 10:47+0500\n"
+"PO-Revision-Date: 2023-03-27 10:49+0500\n"
 "Last-Translator: None None <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -220,40 +220,40 @@ msgstr ""
 msgid "User"
 msgstr ""
 
-#: apps/users/api_endpoints/change_email/SendVerificationCode/serializers.py:19
-#: apps/users/api_endpoints/change_phone_number/SendVerificationCode/serializers.py:20
+#: apps/users/api_endpoints/change_email/SendVerificationCode/serializers.py:22
+#: apps/users/api_endpoints/change_phone_number/SendVerificationCode/serializers.py:23
 #: apps/users/api_endpoints/profile/ChangePassword/serializers.py:18
 msgid "Your password is incorrect!"
 msgstr ""
 
-#: apps/users/api_endpoints/change_email/SendVerificationCode/serializers.py:25
+#: apps/users/api_endpoints/change_email/SendVerificationCode/serializers.py:28
 msgid "This email is unavailable"
 msgstr ""
 
-#: apps/users/api_endpoints/change_email/SendVerificationCode/views.py:42
-#: apps/users/api_endpoints/change_phone_number/SendVerificationCode/views.py:42
+#: apps/users/api_endpoints/change_email/SendVerificationCode/views.py:44
+#: apps/users/api_endpoints/change_phone_number/SendVerificationCode/views.py:44
 msgid "Verification code was sent successfully!"
 msgstr ""
 
-#: apps/users/api_endpoints/change_email/VerifyCode/views.py:26
-#: apps/users/api_endpoints/change_phone_number/VerifyCode/views.py:26
+#: apps/users/api_endpoints/change_email/VerifyCode/views.py:28
+#: apps/users/api_endpoints/change_phone_number/VerifyCode/views.py:28
 msgid "Verification code is expired!"
 msgstr ""
 
-#: apps/users/api_endpoints/change_email/VerifyCode/views.py:34
-#: apps/users/api_endpoints/change_phone_number/VerifyCode/views.py:34
+#: apps/users/api_endpoints/change_email/VerifyCode/views.py:36
+#: apps/users/api_endpoints/change_phone_number/VerifyCode/views.py:36
 msgid "Your verification code is incorrect!"
 msgstr ""
 
-#: apps/users/api_endpoints/change_email/VerifyCode/views.py:44
+#: apps/users/api_endpoints/change_email/VerifyCode/views.py:46
 msgid "Your email changed successfully"
 msgstr ""
 
-#: apps/users/api_endpoints/change_phone_number/SendVerificationCode/serializers.py:26
+#: apps/users/api_endpoints/change_phone_number/SendVerificationCode/serializers.py:29
 msgid "This phone number is unavailable"
 msgstr ""
 
-#: apps/users/api_endpoints/change_phone_number/VerifyCode/views.py:44
+#: apps/users/api_endpoints/change_phone_number/VerifyCode/views.py:46
 msgid "Your phone number changed successfully"
 msgstr ""
 
@@ -263,49 +263,49 @@ msgstr ""
 msgid "Passwords does not match!"
 msgstr ""
 
-#: apps/users/api_endpoints/profile/ChangePassword/views.py:25
+#: apps/users/api_endpoints/profile/ChangePassword/views.py:27
 msgid "You changed your password successfully!"
 msgstr ""
 
-#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:29
+#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:30
 msgid "You can enter only one of phone number and email at a time!"
 msgstr ""
 
-#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:36
+#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:37
 msgid "This number is already taken"
 msgstr ""
 
-#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:44
+#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:45
 msgid "This email is already taken"
 msgstr ""
 
-#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:51
+#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:52
 msgid "You must enter phone number or email!"
 msgstr ""
 
-#: apps/users/api_endpoints/registration/SetPassword/views.py:25
-#: apps/users/api_endpoints/reset_password/ResetPassword/views.py:26
+#: apps/users/api_endpoints/registration/SetPassword/views.py:28
+#: apps/users/api_endpoints/reset_password/ResetPassword/views.py:29
 msgid "Invalid session!"
 msgstr ""
 
-#: apps/users/api_endpoints/registration/SetPassword/views.py:32
-#: apps/users/api_endpoints/reset_password/ResetPassword/views.py:33
+#: apps/users/api_endpoints/registration/SetPassword/views.py:35
+#: apps/users/api_endpoints/reset_password/ResetPassword/views.py:36
 msgid "User is not verified with this session!"
 msgstr ""
 
-#: apps/users/api_endpoints/registration/VerifyCode/views.py:26
+#: apps/users/api_endpoints/registration/VerifyCode/views.py:29
 msgid "Verification code is expired. Or invalid phone/email entered!"
 msgstr ""
 
-#: apps/users/api_endpoints/registration/VerifyCode/views.py:32
+#: apps/users/api_endpoints/registration/VerifyCode/views.py:35
 msgid "Incorrect Code!"
 msgstr ""
 
-#: apps/users/api_endpoints/registration/VerifyCode/views.py:41
+#: apps/users/api_endpoints/registration/VerifyCode/views.py:44
 msgid "Your verification completed successfully!"
 msgstr ""
 
-#: apps/users/api_endpoints/reset_password/ResetPassword/views.py:42
+#: apps/users/api_endpoints/reset_password/ResetPassword/views.py:45
 msgid "Reset password successfully"
 msgstr ""
 
@@ -313,19 +313,19 @@ msgstr ""
 msgid "No user was found with this phone number/email"
 msgstr ""
 
-#: apps/users/api_endpoints/reset_password/SendCode/views.py:26
+#: apps/users/api_endpoints/reset_password/SendCode/views.py:28
 msgid "Code is already sent. Please, wait a while before continue"
 msgstr ""
 
-#: apps/users/api_endpoints/reset_password/VerifyCode/views.py:27
+#: apps/users/api_endpoints/reset_password/VerifyCode/views.py:29
 msgid "Code is expired or Incorrect phone number/email was entered"
 msgstr ""
 
-#: apps/users/api_endpoints/reset_password/VerifyCode/views.py:35
+#: apps/users/api_endpoints/reset_password/VerifyCode/views.py:37
 msgid "Incorrect code!"
 msgstr ""
 
-#: apps/users/api_endpoints/reset_password/VerifyCode/views.py:45
+#: apps/users/api_endpoints/reset_password/VerifyCode/views.py:47
 msgid "Confirmed successfully!"
 msgstr ""
 
@@ -339,7 +339,7 @@ msgstr ""
 
 #: apps/users/models.py:19
 msgid "email address"
-msgstr ""
+msgstr "email manzil"
 
 #: apps/users/models.py:20
 msgid "phone number"
@@ -347,4 +347,16 @@ msgstr ""
 
 #: apps/users/models.py:25
 msgid "users"
+msgstr ""
+
+#: core/settings/base.py:164
+msgid "English"
+msgstr ""
+
+#: core/settings/base.py:165
+msgid "Uzbek"
+msgstr ""
+
+#: core/settings/base.py:166
+msgid "Russian"
 msgstr ""

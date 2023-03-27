@@ -6,8 +6,8 @@ from django.utils.translation import gettext as _
 from phonenumber_field.modelfields import PhoneNumberField
 
 from apps.common.models import TimeStampedModel
-from apps.library.choices import (LanguageType, LevelType, PaymentStatus,
-                                  PaymentType, CartStatus)
+from apps.library.choices import (CartStatus, LanguageType, LevelType,
+                                  PaymentStatus, PaymentType)
 from apps.users.models import CustomUser
 
 
@@ -93,6 +93,7 @@ class Cart(TimeStampedModel):
     status = models.CharField(
         verbose_name=_("Status"), max_length=25, choices=CartStatus.choices, default=CartStatus.PENDING
     )
+
     @property
     def total(self):
         return sum([cart_item.total for cart_item in self.cartitem_set.all()])

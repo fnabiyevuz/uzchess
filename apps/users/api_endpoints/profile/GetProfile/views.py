@@ -1,7 +1,8 @@
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated
 
-from apps.users.api_endpoints.profile.GetProfile.serializers import GetProfileSerializer
+from apps.users.api_endpoints.profile.GetProfile.serializers import \
+    GetProfileSerializer
 
 
 class GetProfileAPIView(RetrieveAPIView):
@@ -12,4 +13,4 @@ class GetProfileAPIView(RetrieveAPIView):
         return self.request.user
 
 
-__all__ = ['GetProfileAPIView']
+__all__ = ["GetProfileAPIView"]

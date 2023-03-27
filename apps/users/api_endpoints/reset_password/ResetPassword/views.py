@@ -1,10 +1,10 @@
 from django.core.cache import cache
 from django.utils.translation import gettext_lazy as _
-from rest_framework import status
-from rest_framework.response import Response
-from rest_framework.generics import get_object_or_404
-from rest_framework.views import APIView
 from drf_yasg.utils import swagger_auto_schema
+from rest_framework import status
+from rest_framework.generics import get_object_or_404
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from apps.users.api_endpoints.reset_password.ResetPassword.serializers import \
     ResetPasswordSerializer
@@ -12,7 +12,6 @@ from apps.users.models import CustomUser
 
 
 class ResetPasswordAPIView(APIView):
-
     @swagger_auto_schema(request_body=ResetPasswordSerializer)
     def post(self, request, *arg, **kwargs):
         serializer = ResetPasswordSerializer(data=request.data)
@@ -37,14 +36,11 @@ class ResetPasswordAPIView(APIView):
             )
 
         # if everything is OKAY
-        user = get_object_or_404(CustomUser.objects.all(), id=session_data['user_id'])
+        user = get_object_or_404(CustomUser.objects.all(), id=session_data["user_id"])
         user.set_password(password)
         user.save()
 
-        return Response(
-            data={'message': _("Reset password successfully")},
-            status=status.HTTP_200_OK
-        )
+        return Response(data={"message": _("Reset password successfully")}, status=status.HTTP_200_OK)
 
 
 __all__ = ["ResetPasswordAPIView"]

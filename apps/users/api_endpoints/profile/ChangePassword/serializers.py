@@ -10,13 +10,11 @@ class ChangePasswordSerializer(serializers.Serializer):
 
     def validate(self, data):
         # check user's password is correct
-        user = self.context['request'].user
-        password = data['password']
+        user = self.context["request"].user
+        password = data["password"]
         if not user.check_password(password):
             # if user's password is incorrect
-            raise ValidationError({
-                'password': _("Your password is incorrect!")
-            })
+            raise ValidationError({"password": _("Your password is incorrect!")})
 
         # check both passwords are the same
         if data["new_password"] != data["new_password2"]:

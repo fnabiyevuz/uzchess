@@ -7,4 +7,4 @@ class VerifyCodeSerializer(serializers.Serializer):
     session = serializers.CharField(max_length=32, required=True)
 
     class Meta:
-        ref_name = 'VerifyCodeResetPasswordSerializer'
+        ref_name = "VerifyCodeResetPasswordSerializer"

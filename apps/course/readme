@@ -1,0 +1,129 @@
+Courses
+    id
+    title
+    author_id (fk users.id)
+    lang_code (static choice, uz, ru, en)
+    price
+    discount_price
+    discount_expire_date
+    category_id (fk categories.id)
+    level_id (fk levels.id)
+---------------
+    getCommentsCount (return count of comments) ## done
+    getAvgRating (return average rating)  ## done
+    getChaptersCount (return count of chapters)
+    getVideosCount (return count of videos)
+    checkIfThisUserFinishedThisCourse (return true or false)
+    getUserViewedVideos (return videos that user viewed and progress = 100)
+    generateCertificate (generate certificate for this user
+        checkIfThisUserAlreadyBoughtThisCourse()
+        checkIfThisUserFinishedThisCourse()
+
+        sertifikatni generatsiya qiladigan kod
+    )
+
+VideoUserViews
+    video_id
+    user_id
+    progress (0-100 foizlarda)
+    viewed_at (auto_now_add=True)
+
+Chapters
+    id
+    title
+    ---------------
+    getVideos (return videos of this chapter)
+    getNextChapter (return next chapter of this chapter
+        select * from chapters where course_id = 1 and id > 5 and order by id asc limit 1)
+
+Videos
+    id
+    title
+    body_text
+    chapter_id (fk chapters.id)
+    video_path
+    video_duration
+    video_thumbnail_path
+---------------
+    pre_save (generate video_duration and video_thumbnail_path)
+    getIfUserViewedPreviosVideo (return true or false)
+        getPreviousVideo()
+        select * from VideoUserViews where video_id = 5 and user_id = 1 and progress = 100
+    getPreviousVideo (return previous video of this video
+        select * from videos where chapter_id = 1 and id < 5 and order by id desc limit 1)
+    getNextVideo (return next video of this video
+        select * from videos where chapter_id = 1 and id > 5 and order by id asc limit 1)
+
+
+CourseComments
+    id
+    author_id (fk users.id)
+    rating (static choice, 1, 2, 3, 4, 5)
+    created_at
+    status_id (static choice, 1=moderating, 2=accept, 3=complaint, 4=reject)
+    comment_text
+    course_id
+---------------
+    checkIfThisUserAlreadyCommented (return true or false)
+    checkIfThisUserElligibleToComment (return true or false, tekshirasan bu user shu kursni to'liq sotib olib tugatganmi yoki yo'qmi
+    Course.checkIfThisUserBoughtThisCourse (return true or false)
+    Course.checkIfThisUserFinishedThisCourse (return true or false)
+    )
+
+CourseCommentComplaints
+    id
+    comment_id (fk coursecomments.id)
+    user_id (fk users.id)
+    complaint_type_id (static choice, 1=spam, 2=offensive, 3=other)
+    complaint_text
+    created_at (auto_now_add=True)
+
+Payments
+    id
+    user_id (fk users.id)
+    course_id (fk courses.id)
+    payment_type (static choice, 1=payme, 2=click, 3=uzcard, 4=humo, 5=paynet, 6=paycom, 7=paybox, 8=payme)
+    payment_status (static choice, 1=moderating, 2=accept, 3=reject)
+    payment_amount
+    payment_date
+    created_at (auto_now_add=True)
+---------------
+    checkIfThisUserAlreadyBoughtThisCourse (return true or false)
+
+Categories
+    id
+    title_uz
+    title_ru
+    title_en
+    icon
+
+Levels
+    id
+    title_uz
+    title_ru
+    title_en
+    icon
+
+
+
+
+
+
+
+
+
+Coupons
+    id
+    title
+    code
+    discount_type (static choice, 1=percent, 2=amount)
+    discount_amount
+    expire_date
+    minimum_amount
+    number_of_usage
+
+UserCouponUsage
+    id
+    coupon_id (fk coupons.id)
+    user_id (fk users.id)
+    used_at (auto_now_add=True)

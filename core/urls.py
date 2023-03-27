@@ -15,7 +15,6 @@ urlpatterns = [
 urlpatterns += swagger_urlpatterns
 urlpatterns += i18n_patterns(path("admin/", admin.site.urls))
 # urlpatterns += i18n_patterns(path("api/v1/", include("apps.v1")))
-urlpatterns += swagger_urlpatterns
 
 if "rosetta" in settings.INSTALLED_APPS:
     urlpatterns += [re_path(r"^rosetta/", include("rosetta.urls"))]

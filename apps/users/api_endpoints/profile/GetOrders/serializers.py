@@ -19,13 +19,15 @@ class CartItemSerializer(serializers.ModelSerializer):
 
 
 class GetOrdersListSerializer(serializers.ModelSerializer):
-    items = serializers.SerializerMethodField()
-
-    def get_items(self, cart):
-        cart_items = cart.cartitem_set.all()
-        serializer = CartItemSerializer(cart_items, many=True)
-        return serializer.data
+    # items = serializers.SerializerMethodField()
+    #
+    # def get_items(self, cart):
+    #     cart_items = cart.cartitem_set.all()
+    #     serializer = CartItemSerializer(cart_items, many=True)
+    #     return serializer.data
 
     class Meta:
         model = Cart
-        fields = ('id', 'total', 'items')
+        fields = ('id', 'total',
+                  # 'items'
+                  )

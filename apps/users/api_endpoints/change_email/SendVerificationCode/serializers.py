@@ -9,6 +9,9 @@ class SendVerificationCodeSerializer(serializers.Serializer):
     password = serializers.CharField(min_length=8, max_length=128, required=True)
     new_email = serializers.EmailField(required=True)
 
+    class Meta:
+        ref_name = 'SendVerificationCodeEmailSerializer'
+
     def validate(self, data):
         # check user's password is correct
         user = self.context['request'].user

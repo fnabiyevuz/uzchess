@@ -206,4 +206,4 @@ SOCIALACCOUNT_PROVIDERS = {  # noqa
     },
 }
 
-SITE_ID = 3
+SITE_ID = 1

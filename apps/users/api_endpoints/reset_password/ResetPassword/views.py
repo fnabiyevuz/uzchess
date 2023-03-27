@@ -4,6 +4,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.generics import get_object_or_404
 from rest_framework.views import APIView
+from drf_yasg.utils import swagger_auto_schema
 
 from apps.users.api_endpoints.reset_password.ResetPassword.serializers import \
     ResetPasswordSerializer
@@ -11,6 +12,8 @@ from apps.users.models import CustomUser
 
 
 class ResetPasswordAPIView(APIView):
+
+    @swagger_auto_schema(request_body=ResetPasswordSerializer)
     def post(self, request, *arg, **kwargs):
         serializer = ResetPasswordSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)

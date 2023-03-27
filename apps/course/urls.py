@@ -16,10 +16,10 @@ urlpatterns = [
     path("FavouriteCourseList", course.FavouriteCourseListAPIView.as_view(), name="favourite-course-list"),
     # course video lessons
     path(
-        "CourseVideoLessonList/<int:course_id>",
+        "CourseVideoLessonList/<int:chapter_id>",
         course.CourseVideoLessonListAPIView.as_view(),
-        name="course-video-lesson-list",
-    ),
+        name="course-video-lesson-list"),
+
     # course comments
     path("CourseCommentList/<int:course_id>", course.CourseCommentListAPIView.as_view(), name="course-comment-list"),
     path(
@@ -40,4 +40,5 @@ urlpatterns = [
     path("GenerateCertificate", course.GenerateCertificateAPIView.as_view(), name="generate-certificate"),
     # payment
     path("PaymentList", course.PaymentListAPIView.as_view(), name="payment-list"),
+    path("PaymentCreate/<int:course_id>", course.PaymentCreateAPIView.as_view(), name="payment-create"),
 ]

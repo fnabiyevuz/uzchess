@@ -3,6 +3,7 @@ from rest_framework import filters
 from rest_framework.generics import ListAPIView
 
 from apps.course.models import FavouriteCourse
+
 from .serializers import FavouriteCourseSerializer
 
 

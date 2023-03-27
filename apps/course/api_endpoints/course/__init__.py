@@ -5,6 +5,7 @@ from .CourseCommentList import *  # noqa
 from .CourseDetail import *  # noqa
 from .CourseList import *  # noqa
 from .CourseVideoLessonList import *  # noqa
+from .FavouriteCourseList import *  # noqa
 from .GenerateCertificate import *  # noqa
 from .Payment import *  # noqa
-from .FavouriteCourseList import *  # noqa
+from .PaymentCreate import *  # noqa

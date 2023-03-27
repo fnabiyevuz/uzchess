@@ -6,7 +6,6 @@ from sorl.thumbnail import ImageField
 from apps.common.models import TimeStampedModel
 from apps.course.utils import randomize_certificate_number
 from apps.users.models import CustomUser
-
 from .choices import (COMPLAINT_TYPE_CHOICES, COURSE_COMMENT_STATUS_CHOICES,
                       LANGUAGE_CODE_CHOICES, PAYMENT_STATUS_CHOICES,
                       PAYMENT_TYPE_CHOICES)
@@ -151,7 +150,7 @@ class CourseCommentComplaint(TimeStampedModel):
         CustomUser, on_delete=models.CASCADE, related_name="coursecommentcomplaint_user", verbose_name=_("User")
     )
     complaint_type = models.CharField(
-        max_length=50, verbose_name=_("Complaint type"), choices=COMPLAINT_TYPE_CHOICES
+        max_length=50, verbose_name=_("Complaint type"), choices=COMPLAINT_TYPE_CHOICES, blank=True, null=True
     )  # static choice 1= spam, 2=offensive, 3=other
     complaint_text = models.TextField(verbose_name=_("Complaint text"))
 
@@ -175,7 +174,7 @@ class Payment(TimeStampedModel):
     payment_status = models.CharField(
         max_length=50, verbose_name=_("Payment status"), choices=PAYMENT_STATUS_CHOICES
     )  # static choice 1=success, 2=failed 3=moderating
-    payment_date = models.DateTimeField(verbose_name=_("Payment date"))
+    payment_date = models.DateTimeField(verbose_name=_("Payment date"), auto_now_add=True)
 
     class Meta:
         verbose_name = _("Payment")

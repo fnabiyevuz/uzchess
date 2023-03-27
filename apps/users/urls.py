@@ -31,6 +31,8 @@ urlpatterns = [
     path('profile/favourite-books/', profile.GetFavouriteBooksAPIView.as_view(), name='favourite-books'),
     # orders
     path('profile/orders/', profile.GetOrdersListAPIView.as_view(), name='profile-orders'),
+    # logout
+    path('profile/logout/', profile.LogoutAPIView.as_view(), name='logout'),
 
     # CHANGE PHONE NUMBER OR EMAIL
     # phone number

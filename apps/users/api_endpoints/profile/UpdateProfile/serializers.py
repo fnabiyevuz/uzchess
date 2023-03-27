@@ -8,6 +8,3 @@ class UpdateProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = ('id', 'full_name', 'profile_pic', 'birth_date', )
-        extra_kwargs = {
-            'profile_pic': {'read_only': False}
-        }

@@ -11,9 +11,6 @@ psycopg2-binary==2.9.5
 django-rosetta==0.9.8
 redis==4.5.2
 phonenumbers==8.13.7
-<<<<<<< HEAD
-django-filter==22.1
-=======
 sorl-thumbnail==12.9.0
 django-filter==22.1
 django-qrcode==0.3
@@ -23,5 +20,3 @@ qrcode==7.4.2
 dj-rest-auth==3.0.0
 django-allauth==0.52.0
 sorl-thumbnail==12.9.0
-django-filter==22.1
->>>>>>> e31a13b51cf0fd5c998e7e00946abe633c58926c

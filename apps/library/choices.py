@@ -29,3 +29,4 @@ class PaymentType(models.TextChoices):
 class CartStatus(models.TextChoices):
     PENDING = "Pending"
     CHECKOUT = "Checkout"
+    BOOKED = "Booked"

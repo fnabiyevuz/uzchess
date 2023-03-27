@@ -13,6 +13,7 @@ urlpatterns = [
         name="course-category-list",
     ),
     path("CourseDetail/<int:pk>", course.CourseDetailAPIView.as_view(), name="course-detail"),
+    path("FavouriteCourseList", course.FavouriteCourseListAPIView.as_view(), name="favourite-course-list"),
     # course video lessons
     path(
         "CourseVideoLessonList/<int:course_id>",

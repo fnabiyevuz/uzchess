@@ -1,5 +1,9 @@
-from rest_framework.serializers import CharField, Serializer
+from rest_framework.serializers import ModelSerializer
+
+from apps.library.models import Coupon
 
 
-class CouponSerializer(Serializer):
-    code = CharField(max_length=9)
+class CouponSerializer(ModelSerializer):
+    class Meta:
+        model = Coupon
+        fields = ("code", "percent", "min_amount", "expired_date")

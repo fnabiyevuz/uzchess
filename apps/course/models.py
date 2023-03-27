@@ -216,3 +216,20 @@ class Certificate(TimeStampedModel):
         verbose_name = _("Certificate")
         verbose_name_plural = _("Certificates")
         unique_together = ["user", "course"]
+
+
+class FavouriteCourse(TimeStampedModel):
+    user = models.ForeignKey(
+        CustomUser, on_delete=models.CASCADE, related_name="favourite_courses", verbose_name=_("User")
+    )
+    course = models.ForeignKey(
+        Course, on_delete=models.CASCADE, related_name="favourite_courses", verbose_name=_("Favourite Course")
+    )
+
+    def __str__(self):
+        return f"{self.user} - {self.course}"
+
+    class Meta:
+        verbose_name = _("Favourite Course")
+        verbose_name_plural = _("Favourite Courses")
+        unique_together = ["user", "course"]

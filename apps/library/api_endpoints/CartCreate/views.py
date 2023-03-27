@@ -14,11 +14,14 @@ class CartCreateApiView(CreateAPIView):
     queryset = Cart.objects.all()
 
     def create(self, request, *args, **kwargs):
-        cart, created = Cart.objects.get_or_create(user=request.user, status=CartStatus.PENDING)
-        cart_item = CartItem.objects.create(cart=cart, book_id=request.data["book_id"])
-        if cart and cart_item:
-            return Response({"result": "Cart and CartItem were successfully created!"})
-        return Response({"error": "Error at Cart or CartItem creating"})
+        try:
+            cart, created = Cart.objects.get_or_create(user=request.user, status=CartStatus.PENDING)
+            cart_item = CartItem.objects.create(cart=cart, book_id=request.data["book_id"])
+            if cart and cart_item:
+                return Response({"result": "Cart and CartItem were successfully created!"})
+            return Response({"error": "Error at Cart or CartItem creating"})
+        except Exception as e:
+            return Response({"Error": f"{e}"})
 
 
 __all__ = ["CartCreateApiView"]

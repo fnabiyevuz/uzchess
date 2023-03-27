@@ -99,14 +99,14 @@ class Cart(TimeStampedModel):
         return sum([cart_item.total for cart_item in self.cartitem_set.all()])
 
     def __str__(self):
-        return self.user.username
+        return str(self.id)
 
     class Meta:
         verbose_name = _("Cart")
         verbose_name_plural = _("Carts")
 
 
-class CartItem(models.Model):
+class CartItem(TimeStampedModel):
     cart = models.ForeignKey(Cart, verbose_name="Cart", on_delete=models.CASCADE)
     book = models.ForeignKey(Book, verbose_name="Book", on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(verbose_name=_("Quantity"), default=1)
@@ -128,6 +128,7 @@ class CartItem(models.Model):
 
 
 class Order(TimeStampedModel):
+    cart = models.OneToOneField(Cart, verbose_name=_("cart"), on_delete=models.CASCADE, null=True)
     full_name = models.CharField(verbose_name=_("Full name"), max_length=255, null=True, blank=True)
     phone = PhoneNumberField(region="UZ", verbose_name=_("Phone number"), null=True, blank=True)
     email = models.EmailField(verbose_name=_("Email address"), null=True, blank=True)
@@ -139,6 +140,15 @@ class Order(TimeStampedModel):
     )
     coupon = models.ForeignKey(Coupon, on_delete=models.SET_NULL, verbose_name=_("Coupon"), null=True, blank=True)
     order_id = models.CharField(verbose_name=_("Order id"), max_length=11, null=True, blank=True)
+    payment_amount = models.DecimalField(
+        verbose_name=_("Payment amount"), default=0, max_digits=12, decimal_places=2, null=True, blank=True
+    )
+
+    def save(self, *args, **kwargs):
+        if self.order_id is None:
+            self.order_id = get_random_string(length=11, allowed_chars="0123456789")
+
+        super(Order, self).save(*args, **kwargs)
 
 
 class FavouriteBook(TimeStampedModel):

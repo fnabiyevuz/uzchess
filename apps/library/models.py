@@ -135,10 +135,9 @@ class CartItem(models.Model):
         verbose_name_plural = _("Cart Items")
 
 
-
 class FavouriteBook(TimeStampedModel):
-    user = models.ForeignKey(CustomUser, verbose_name='user', related_name='favourite_books', on_delete=models.CASCADE)
-    book = models.ForeignKey(Book, verbose_name='book', related_name='favourite_books', on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, verbose_name="user", related_name="favourite_books", on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, verbose_name="book", related_name="favourite_books", on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.book.title} liked by {self.user.username}"

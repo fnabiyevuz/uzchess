@@ -37,10 +37,8 @@ DJANGO_APPS = [
 ]
 
 CUSTOM_APPS = [
-    "apps.cart",
     "apps.common",
     "apps.course",
-    "apps.feedback",
     "apps.library",
     "apps.main",
     "apps.news",
@@ -50,6 +48,7 @@ CUSTOM_APPS = [
 THIRD_PARTY_APPS = [
     "rest_framework",
     "drf_yasg",
+    "sorl.thumbnail",
     # "rest_framework_simplejwt",
     "rosetta",
     "ckeditor",
@@ -57,17 +56,21 @@ THIRD_PARTY_APPS = [
     "phonenumber_field",
     "sorl.thumbnail",
     # "django_filters",
-    # "rest_framework.authtoken",
-    # "dj_rest_auth",
+    "rest_framework.authtoken",
+    "dj_rest_auth",
     # "social_django",
-    # "allauth",
-    # "allauth.account",
-    # "allauth.socialaccount",
-    # "allauth.socialaccount.providers.google",
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "dj_rest_auth.registration",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
     # "allauth.socialaccount.providers.apple",
     # "corsheaders",
     "modeltranslation",
+    "django_filters",
 ]
+
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
@@ -116,9 +119,9 @@ WSGI_APPLICATION = "core.wsgi.application"
 # }
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / '../db.sqlite3',
     }
 }
 
@@ -190,3 +193,29 @@ CACHES = {
         # }
     }
 }
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DATETIME_FORMAT': '%Y-%m-%d %H:%M',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100
+}
+
+# SOCIAL AUTH CONFIGURATIONS
+SOCIALACCOUNT_PROVIDERS = {  # noqa
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "offline",
+        },
+        'METHOD': 'oauth2',
+        'VERIFIED_EMAIL': False,
+    },
+}
+
+SITE_ID = 1

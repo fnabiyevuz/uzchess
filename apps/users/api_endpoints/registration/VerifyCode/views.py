@@ -1,16 +1,15 @@
 from django.core.cache import cache
 from django.utils.translation import gettext_lazy as _
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from drf_yasg.utils import swagger_auto_schema
 
 from apps.users.api_endpoints.registration.VerifyCode.serializers import \
     VerifyCodeSerializer
 
 
 class VerifyCodeAPIView(APIView):
-
     @swagger_auto_schema(request_body=VerifyCodeSerializer)
     def post(self, request, *args, **kwargs):
         serializer = VerifyCodeSerializer(data=request.data)

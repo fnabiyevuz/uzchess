@@ -10,22 +10,18 @@ class SendVerificationCodeSerializer(serializers.Serializer):
     new_email = serializers.EmailField(required=True)
 
     class Meta:
-        ref_name = 'SendVerificationCodeEmailSerializer'
+        ref_name = "SendVerificationCodeEmailSerializer"
 
     def validate(self, data):
         # check user's password is correct
-        user = self.context['request'].user
-        password = data['password']
+        user = self.context["request"].user
+        password = data["password"]
         if not user.check_password(password):
             # if user's password is incorrect
-            raise ValidationError({
-                'password': _("Your password is incorrect!")
-            })
+            raise ValidationError({"password": _("Your password is incorrect!")})
 
         # check if new_phone_number is available
-        if CustomUser.objects.filter(email=data['new_email']).exists():
-            raise ValidationError({
-                'new_email': _("This email is unavailable")
-            })
+        if CustomUser.objects.filter(email=data["new_email"]).exists():
+            raise ValidationError({"new_email": _("This email is unavailable")})
 
         return data

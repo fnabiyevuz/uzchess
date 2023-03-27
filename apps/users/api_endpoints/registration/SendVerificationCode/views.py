@@ -1,8 +1,8 @@
 from django.core.cache import cache
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from drf_yasg.utils import swagger_auto_schema
 
 from apps.users.api_endpoints.registration.SendVerificationCode.serializers import \
     SendVerificationCodeSerializer
@@ -14,7 +14,6 @@ from apps.users.services.message_senders import (send_verification_code_email,
 
 
 class SendVerificationCodeAPIView(APIView):
-
     @swagger_auto_schema(request_body=SendVerificationCodeSerializer)
     def post(self, request, *args, **kwargs):
         serializer = SendVerificationCodeSerializer(data=request.data)

@@ -5,4 +5,4 @@ class VerifyCodeSerializer(serializers.Serializer):
     code = serializers.CharField(required=True)
 
     class Meta:
-        ref_name = 'VerifyCodeEmailSerializer'
+        ref_name = "VerifyCodeEmailSerializer"

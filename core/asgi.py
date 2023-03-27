@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # READING ENV
 env = environ.Env()
-env.read_env(os.path.join(BASE_DIR, "../.env"))
+env.read_env(os.path.join(BASE_DIR, ".env"))
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", env.str("DJANGO_SETTINGS_MODULE"))
 

@@ -1,5 +1,5 @@
 from rest_framework.generics import ListAPIView
-
+from rest_framework.permissions import IsAuthenticated
 
 from apps.library.models import Book
 from apps.library.api_endpoints.BookList.serializers import BookSerializer as BookListSerializer
@@ -7,6 +7,7 @@ from apps.library.api_endpoints.BookList.serializers import BookSerializer as Bo
 
 class GetFavouriteBooksAPIView(ListAPIView):
     serializer_class = BookListSerializer
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         """

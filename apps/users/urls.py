@@ -28,6 +28,10 @@ urlpatterns = [
     path('profile/update/', profile.UpdateProfileAPIView.as_view(), name='update-profile'),
     path('profile/change-password/', profile.ChangePasswordAPIView.as_view(), name='change-password'),
 
+    # favourite items
+    path('profile/favourite-books/', profile.GetFavouriteBooksAPIView.as_view(), name='favourite-books'),
+
+
     # CHANGE PHONE NUMBER OR EMAIL
     # phone number
     path(

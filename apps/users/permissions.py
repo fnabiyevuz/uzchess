@@ -1,6 +1,7 @@
 from rest_framework import permissions
 
 from .choices import VIA_EMAIL, VIA_PHONE_NUMBER
+from .models import CustomUser
 
 
 class IsRegisteredViaPhoneNumber(permissions.BasePermission):

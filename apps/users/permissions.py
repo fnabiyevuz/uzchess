@@ -1,6 +1,7 @@
 from rest_framework import permissions
 
 from .choices import VIA_EMAIL, VIA_PHONE_NUMBER
+from .models import CustomUser
 
 
 class IsRegisteredViaPhoneNumber(permissions.BasePermission):
@@ -9,6 +10,7 @@ class IsRegisteredViaPhoneNumber(permissions.BasePermission):
     """
 
     def has_permission(self, request, view):
+
         return bool(request.user and request.user.is_authenticated and request.user.auth_type == VIA_PHONE_NUMBER)
 
 

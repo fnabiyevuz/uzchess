@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-28 13:36+0500\n"
+"POT-Creation-Date: 2023-03-28 14:26+0500\n"
 "PO-Revision-Date: 2023-03-27 10:49+0500\n"
 "Last-Translator: None None <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,556 +19,547 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\apps\common\models.py:7
+#: apps/common/models.py:7
 msgid "Created at"
 msgstr ""
 
-#: .\apps\common\models.py:8
+#: apps/common/models.py:8
 msgid "Updated at"
 msgstr ""
 
-#: .\apps\course\api_endpoints\course\CourseCommentComplaintCreate\serializers.py:33
-#: .\apps\course\api_endpoints\course\CourseCommentCreate\serializers.py:26
+#: apps/course/api_endpoints/course/CourseCommentComplaintCreate/serializers.py:33
+#: apps/course/api_endpoints/course/CourseCommentCreate/serializers.py:26
 msgid "You can't comment twice"
 msgstr ""
 
-#: .\apps\course\models.py:16 .\apps\course\models.py:28
-#: .\apps\course\models.py:40 .\apps\course\models.py:66
-#: .\apps\course\models.py:79 .\apps\library\models.py:26
-#: .\apps\library\models.py:38 .\apps\main\models.py:37
-#: .\apps\news\models.py:12
+#: apps/course/models.py:16 apps/course/models.py:28 apps/course/models.py:40
+#: apps/course/models.py:66 apps/course/models.py:79 apps/library/models.py:26
+#: apps/library/models.py:38 apps/main/models.py:37 apps/news/models.py:12
 msgid "Title"
 msgstr ""
 
-#: .\apps\course\models.py:17 .\apps\course\models.py:29
+#: apps/course/models.py:17 apps/course/models.py:29
 msgid "Icon"
 msgstr ""
 
-#: .\apps\course\models.py:20 .\apps\course\models.py:51
-#: .\apps\library\models.py:32
+#: apps/course/models.py:20 apps/course/models.py:51 apps/library/models.py:32
 msgid "Category"
 msgstr ""
 
-#: .\apps\course\models.py:21 .\apps\library\models.py:33
+#: apps/course/models.py:21 apps/library/models.py:33
 msgid "Categories"
 msgstr ""
 
-#: .\apps\course\models.py:32 .\apps\course\models.py:53
-#: .\apps\library\models.py:53
+#: apps/course/models.py:32 apps/course/models.py:53 apps/library/models.py:53
 msgid "Level"
 msgstr ""
 
-#: .\apps\course\models.py:33
+#: apps/course/models.py:33
 msgid "Levels"
 msgstr ""
 
-#: .\apps\course\models.py:42 .\apps\course\models.py:115
-#: .\apps\library\models.py:37
+#: apps/course/models.py:42 apps/course/models.py:115 apps/library/models.py:37
 msgid "Author"
 msgstr ""
 
-#: .\apps\course\models.py:44
+#: apps/course/models.py:44
 msgid "Language code"
 msgstr ""
 
-#: .\apps\course\models.py:45 .\apps\library\models.py:43
+#: apps/course/models.py:45 apps/library/models.py:43
 msgid "Price"
 msgstr ""
 
-#: .\apps\course\models.py:47
+#: apps/course/models.py:47
 msgid "Discounted price"
 msgstr ""
 
-#: .\apps\course\models.py:49
+#: apps/course/models.py:49
 msgid "Discounted expire date"
 msgstr ""
 
-#: .\apps\course\models.py:55
+#: apps/course/models.py:55
 msgid "Is Free"
 msgstr ""
 
-#: .\apps\course\models.py:58 .\apps\course\models.py:68
-#: .\apps\course\models.py:124 .\apps\course\models.py:156
-#: .\apps\course\models.py:190
+#: apps/course/models.py:58 apps/course/models.py:68 apps/course/models.py:124
+#: apps/course/models.py:156 apps/course/models.py:190
 msgid "Course"
 msgstr ""
 
-#: .\apps\course\models.py:59
+#: apps/course/models.py:59
 msgid "Courses"
 msgstr ""
 
-#: .\apps\course\models.py:71 .\apps\course\models.py:81
+#: apps/course/models.py:71 apps/course/models.py:81
 msgid "Chapter"
 msgstr ""
 
-#: .\apps\course\models.py:72
+#: apps/course/models.py:72
 msgid "Chapters"
 msgstr ""
 
-#: .\apps\course\models.py:80
+#: apps/course/models.py:80
 msgid "Body text"
 msgstr ""
 
-#: .\apps\course\models.py:82
+#: apps/course/models.py:82
 msgid "Video path"
 msgstr ""
 
-#: .\apps\course\models.py:83
+#: apps/course/models.py:83
 msgid "Video duration"
 msgstr ""
 
-#: .\apps\course\models.py:84
+#: apps/course/models.py:84
 msgid "Video thumbnail"
 msgstr ""
 
-#: .\apps\course\models.py:87 .\apps\course\models.py:99
+#: apps/course/models.py:87 apps/course/models.py:99
 msgid "Video"
 msgstr ""
 
-#: .\apps\course\models.py:88
+#: apps/course/models.py:88
 msgid "Videos"
 msgstr ""
 
-#: .\apps\course\models.py:96 .\apps\course\models.py:139
-#: .\apps\course\models.py:155 .\apps\course\models.py:189
-#: .\apps\course\models.py:207 .\apps\news\models.py:29
+#: apps/course/models.py:96 apps/course/models.py:139 apps/course/models.py:155
+#: apps/course/models.py:189 apps/course/models.py:207 apps/news/models.py:29
 msgid "User"
 msgstr ""
 
-#: .\apps\course\models.py:101
+#: apps/course/models.py:101
 msgid "Last Watched Time"
 msgstr ""
 
-#: .\apps\course\models.py:102 .\apps\course\models.py:157
+#: apps/course/models.py:102 apps/course/models.py:157
 msgid "Is Finished"
 msgstr ""
 
-#: .\apps\course\models.py:103
+#: apps/course/models.py:103
 msgid "Progress"
 msgstr ""
 
-#: .\apps\course\models.py:106
+#: apps/course/models.py:106
 msgid "Video user view"
 msgstr ""
 
-#: .\apps\course\models.py:107
+#: apps/course/models.py:107
 msgid "Video user views"
 msgstr ""
 
-#: .\apps\course\models.py:118
+#: apps/course/models.py:118
 msgid "Rating"
 msgstr ""
 
-#: .\apps\course\models.py:121 .\apps\library\models.py:94
+#: apps/course/models.py:121 apps/library/models.py:94
 msgid "Status"
 msgstr ""
 
-#: .\apps\course\models.py:123
+#: apps/course/models.py:123
 msgid "Comment text"
 msgstr ""
 
-#: .\apps\course\models.py:127
+#: apps/course/models.py:127
 msgid "Course comment"
 msgstr ""
 
-#: .\apps\course\models.py:128
+#: apps/course/models.py:128
 msgid "Course comments"
 msgstr ""
 
-#: .\apps\course\models.py:136
+#: apps/course/models.py:136
 msgid "Comment"
 msgstr ""
 
-#: .\apps\course\models.py:142
+#: apps/course/models.py:142
 msgid "Complaint type"
 msgstr ""
 
-#: .\apps\course\models.py:144
+#: apps/course/models.py:144
 msgid "Complaint text"
 msgstr ""
 
-#: .\apps\course\models.py:147
+#: apps/course/models.py:147
 msgid "Course comment complaint"
 msgstr ""
 
-#: .\apps\course\models.py:148
+#: apps/course/models.py:148
 msgid "Course comment complaints"
 msgstr ""
 
-#: .\apps\course\models.py:163 .\apps\course\models.py:169
+#: apps/course/models.py:163 apps/course/models.py:169
 msgid "User Course"
 msgstr ""
 
-#: .\apps\course\models.py:164
+#: apps/course/models.py:164
 msgid "User Courses"
 msgstr ""
 
-#: .\apps\course\models.py:171
+#: apps/course/models.py:171
 msgid "Amount"
 msgstr ""
 
-#: .\apps\course\models.py:173
+#: apps/course/models.py:173
 msgid "Payment type"
 msgstr ""
 
-#: .\apps\course\models.py:176 .\apps\library\models.py:136
+#: apps/course/models.py:176 apps/library/models.py:136
 msgid "Payment status"
 msgstr ""
 
-#: .\apps\course\models.py:178
+#: apps/course/models.py:178
 msgid "Payment date"
 msgstr ""
 
-#: .\apps\course\models.py:181
+#: apps/course/models.py:181
 msgid "Payment"
 msgstr ""
 
-#: .\apps\course\models.py:182
+#: apps/course/models.py:182
 msgid "Payments"
 msgstr ""
 
-#: .\apps\course\models.py:191
+#: apps/course/models.py:191
 #, fuzzy
 #| msgid "Full name"
 msgid "Full Name"
 msgstr "Ism-sharif"
 
-#: .\apps\course\models.py:192
+#: apps/course/models.py:192
 msgid "CID"
 msgstr ""
 
-#: .\apps\course\models.py:193
+#: apps/course/models.py:193
 msgid "File"
 msgstr ""
 
-#: .\apps\course\models.py:194
+#: apps/course/models.py:194
 msgid "Image"
 msgstr ""
 
-#: .\apps\course\models.py:200
+#: apps/course/models.py:200
 msgid "Certificate"
 msgstr ""
 
-#: .\apps\course\models.py:201
+#: apps/course/models.py:201
 msgid "Certificates"
 msgstr ""
 
-#: .\apps\course\models.py:210 .\apps\course\models.py:217
+#: apps/course/models.py:210 apps/course/models.py:217
 msgid "Favourite Course"
 msgstr ""
 
-#: .\apps\course\models.py:218
+#: apps/course/models.py:218
 msgid "Favourite Courses"
 msgstr ""
 
-#: .\apps\library\models.py:15 .\apps\library\models.py:132
-#: .\apps\main\models.py:24
+#: apps/library/models.py:15 apps/library/models.py:132 apps/main/models.py:24
 msgid "Full name"
 msgstr "Ism-sharif"
 
-#: .\apps\library\models.py:39
+#: apps/library/models.py:39
 msgid "Page"
 msgstr ""
 
-#: .\apps\library\models.py:40
+#: apps/library/models.py:40
 msgid "Published year"
 msgstr ""
 
-#: .\apps\library\models.py:41
+#: apps/library/models.py:41
 msgid "Description"
 msgstr ""
 
-#: .\apps\library\models.py:42
+#: apps/library/models.py:42
 msgid "Book image"
 msgstr ""
 
-#: .\apps\library\models.py:45
+#: apps/library/models.py:45
 msgid "Discount price"
 msgstr ""
 
-#: .\apps\library\models.py:47
+#: apps/library/models.py:47
 msgid "Rate"
 msgstr ""
 
-#: .\apps\library\models.py:50
+#: apps/library/models.py:50
 msgid "Language"
 msgstr ""
 
-#: .\apps\library\models.py:60
+#: apps/library/models.py:60
 msgid "Book"
 msgstr ""
 
-#: .\apps\library\models.py:61
+#: apps/library/models.py:61
 msgid "Books"
 msgstr ""
 
-#: .\apps\library\models.py:71
+#: apps/library/models.py:71
 msgid "Code"
 msgstr ""
 
-#: .\apps\library\models.py:72
+#: apps/library/models.py:72
 msgid "Percent"
 msgstr ""
 
-#: .\apps\library\models.py:73
+#: apps/library/models.py:73
 msgid "Minimal amount"
 msgstr ""
 
-#: .\apps\library\models.py:74
+#: apps/library/models.py:74
 msgid "Expired date"
 msgstr ""
 
-#: .\apps\library\models.py:80 .\apps\library\models.py:141
+#: apps/library/models.py:80 apps/library/models.py:141
 msgid "Coupon"
 msgstr ""
 
-#: .\apps\library\models.py:81
+#: apps/library/models.py:81
 msgid "Coupons"
 msgstr ""
 
-#: .\apps\library\models.py:92 .\apps\users\models.py:24
+#: apps/library/models.py:92 apps/users/models.py:24
 msgid "user"
 msgstr ""
 
-#: .\apps\library\models.py:105
+#: apps/library/models.py:105
 msgid "Cart"
 msgstr ""
 
-#: .\apps\library\models.py:106
+#: apps/library/models.py:106
 msgid "Carts"
 msgstr ""
 
-#: .\apps\library\models.py:112
+#: apps/library/models.py:112
 msgid "Quantity"
 msgstr ""
 
-#: .\apps\library\models.py:113
+#: apps/library/models.py:113
 msgid "Total"
 msgstr ""
 
-#: .\apps\library\models.py:126
+#: apps/library/models.py:126
 msgid "Cart Item"
 msgstr ""
 
-#: .\apps\library\models.py:127
+#: apps/library/models.py:127
 msgid "Cart Items"
 msgstr ""
 
-#: .\apps\library\models.py:131
+#: apps/library/models.py:131
 msgid "cart"
 msgstr ""
 
-#: .\apps\library\models.py:133 .\apps\main\models.py:11
-#: .\apps\main\models.py:25
+#: apps/library/models.py:133 apps/main/models.py:11 apps/main/models.py:25
 msgid "Phone number"
 msgstr ""
 
-#: .\apps\library\models.py:134
+#: apps/library/models.py:134
 msgid "Email address"
 msgstr ""
 
-#: .\apps\library\models.py:139
+#: apps/library/models.py:139
 msgid "Payment Type"
 msgstr ""
 
-#: .\apps\library\models.py:142
+#: apps/library/models.py:142
 msgid "Order id"
 msgstr ""
 
-#: .\apps\library\models.py:144
+#: apps/library/models.py:144
 msgid "Payment amount"
 msgstr ""
 
-#: .\apps\library\models.py:162
+#: apps/library/models.py:162
 msgid "Favourite"
 msgstr ""
 
-#: .\apps\library\models.py:163
+#: apps/library/models.py:163
 msgid "Favourites"
 msgstr ""
 
-#: .\apps\main\models.py:9
+#: apps/main/models.py:9
 msgid "Working time"
 msgstr ""
 
-#: .\apps\main\models.py:10
+#: apps/main/models.py:10
 msgid "Email"
 msgstr ""
 
-#: .\apps\main\models.py:12
+#: apps/main/models.py:12
 msgid "Metro"
 msgstr ""
 
-#: .\apps\main\models.py:13
+#: apps/main/models.py:13
 msgid "Map"
 msgstr ""
 
-#: .\apps\main\models.py:26
+#: apps/main/models.py:26
 msgid "Text"
 msgstr ""
 
-#: .\apps\main\models.py:38
+#: apps/main/models.py:38
 msgid "Content"
 msgstr ""
 
-#: .\apps\news\models.py:13
+#: apps/news/models.py:13
 msgid "Slug"
 msgstr ""
 
-#: .\apps\news\models.py:14
+#: apps/news/models.py:14
 msgid "Photo"
 msgstr ""
 
-#: .\apps\news\models.py:15
+#: apps/news/models.py:15
 msgid "Context"
 msgstr ""
 
-#: .\apps\news\models.py:27
+#: apps/news/models.py:27
 msgid "Device ID"
 msgstr ""
 
-#: .\apps\news\models.py:28
+#: apps/news/models.py:28
 msgid "News"
 msgstr ""
 
-#: .\apps\users\api_endpoints\change_email\SendVerificationCode\serializers.py:21
-#: .\apps\users\api_endpoints\change_phone_number\SendVerificationCode\serializers.py:22
-#: .\apps\users\api_endpoints\profile\ChangePassword\serializers.py:17
+#: apps/users/api_endpoints/change_email/SendVerificationCode/serializers.py:21
+#: apps/users/api_endpoints/change_phone_number/SendVerificationCode/serializers.py:22
+#: apps/users/api_endpoints/profile/ChangePassword/serializers.py:17
 msgid "Your password is incorrect!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\change_email\SendVerificationCode\serializers.py:25
+#: apps/users/api_endpoints/change_email/SendVerificationCode/serializers.py:25
 msgid "This email is unavailable"
 msgstr ""
 
-#: .\apps\users\api_endpoints\change_email\SendVerificationCode\views.py:44
-#: .\apps\users\api_endpoints\change_phone_number\SendVerificationCode\views.py:44
+#: apps/users/api_endpoints/change_email/SendVerificationCode/views.py:44
+#: apps/users/api_endpoints/change_phone_number/SendVerificationCode/views.py:44
 msgid "Verification code was sent successfully!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\change_email\VerifyCode\views.py:28
-#: .\apps\users\api_endpoints\change_phone_number\VerifyCode\views.py:28
+#: apps/users/api_endpoints/change_email/VerifyCode/views.py:28
+#: apps/users/api_endpoints/change_phone_number/VerifyCode/views.py:28
 msgid "Verification code is expired!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\change_email\VerifyCode\views.py:34
-#: .\apps\users\api_endpoints\change_phone_number\VerifyCode\views.py:34
+#: apps/users/api_endpoints/change_email/VerifyCode/views.py:34
+#: apps/users/api_endpoints/change_phone_number/VerifyCode/views.py:34
 msgid "Your verification code is incorrect!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\change_email\VerifyCode\views.py:42
+#: apps/users/api_endpoints/change_email/VerifyCode/views.py:42
 msgid "Your email changed successfully"
 msgstr ""
 
-#: .\apps\users\api_endpoints\change_phone_number\SendVerificationCode\serializers.py:26
+#: apps/users/api_endpoints/change_phone_number/SendVerificationCode/serializers.py:26
 msgid "This phone number is unavailable"
 msgstr ""
 
-#: .\apps\users\api_endpoints\change_phone_number\VerifyCode\views.py:42
+#: apps/users/api_endpoints/change_phone_number/VerifyCode/views.py:42
 msgid "Your phone number changed successfully"
 msgstr ""
 
-#: .\apps\users\api_endpoints\profile\ChangePassword\serializers.py:22
-#: .\apps\users\api_endpoints\registration\SetPassword\serializers.py:15
-#: .\apps\users\api_endpoints\reset_password\ResetPassword\serializers.py:15
+#: apps/users/api_endpoints/profile/ChangePassword/serializers.py:22
+#: apps/users/api_endpoints/registration/SetPassword/serializers.py:15
+#: apps/users/api_endpoints/reset_password/ResetPassword/serializers.py:15
 msgid "Passwords does not match!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\profile\ChangePassword\views.py:27
+#: apps/users/api_endpoints/profile/ChangePassword/views.py:27
 msgid "You changed your password successfully!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\registration\SendVerificationCode\serializers.py:30
+#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:30
 msgid "You can enter only one of phone number and email at a time!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\registration\SendVerificationCode\serializers.py:37
+#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:37
 msgid "This number is already taken"
 msgstr ""
 
-#: .\apps\users\api_endpoints\registration\SendVerificationCode\serializers.py:45
+#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:45
 msgid "This email is already taken"
 msgstr ""
 
-#: .\apps\users\api_endpoints\registration\SendVerificationCode\serializers.py:52
+#: apps/users/api_endpoints/registration/SendVerificationCode/serializers.py:52
 msgid "You must enter phone number or email!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\registration\SetPassword\views.py:27
-#: .\apps\users\api_endpoints\reset_password\ResetPassword\views.py:28
+#: apps/users/api_endpoints/registration/SetPassword/views.py:27
+#: apps/users/api_endpoints/reset_password/ResetPassword/views.py:28
 msgid "Invalid session!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\registration\SetPassword\views.py:34
-#: .\apps\users\api_endpoints\reset_password\ResetPassword\views.py:35
+#: apps/users/api_endpoints/registration/SetPassword/views.py:34
+#: apps/users/api_endpoints/reset_password/ResetPassword/views.py:35
 msgid "User is not verified with this session!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\registration\VerifyCode\views.py:28
+#: apps/users/api_endpoints/registration/VerifyCode/views.py:28
 msgid "Verification code is expired. Or invalid phone/email entered!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\registration\VerifyCode\views.py:34
+#: apps/users/api_endpoints/registration/VerifyCode/views.py:34
 msgid "Incorrect Code!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\registration\VerifyCode\views.py:43
+#: apps/users/api_endpoints/registration/VerifyCode/views.py:43
 msgid "Your verification completed successfully!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\reset_password\ResetPassword\views.py:43
+#: apps/users/api_endpoints/reset_password/ResetPassword/views.py:43
 msgid "Reset password successfully"
 msgstr ""
 
-#: .\apps\users\api_endpoints\reset_password\SendCode\serializers.py:19
+#: apps/users/api_endpoints/reset_password/SendCode/serializers.py:19
 msgid "No user was found with this phone number/email"
 msgstr ""
 
-#: .\apps\users\api_endpoints\reset_password\SendCode\views.py:30
+#: apps/users/api_endpoints/reset_password/SendCode/views.py:30
 msgid "Code is already sent. Please, wait a while before continue"
 msgstr ""
 
-#: .\apps\users\api_endpoints\reset_password\VerifyCode\views.py:28
+#: apps/users/api_endpoints/reset_password/VerifyCode/views.py:28
 msgid "Code is expired or Incorrect phone number/email was entered"
 msgstr ""
 
-#: .\apps\users\api_endpoints\reset_password\VerifyCode\views.py:35
+#: apps/users/api_endpoints/reset_password/VerifyCode/views.py:35
 msgid "Incorrect code!"
 msgstr ""
 
-#: .\apps\users\api_endpoints\reset_password\VerifyCode\views.py:42
+#: apps/users/api_endpoints/reset_password/VerifyCode/views.py:42
 msgid "Confirmed successfully!"
 msgstr ""
 
-#: .\apps\users\models.py:16
+#: apps/users/models.py:16
 msgid "full name"
 msgstr ""
 
-#: .\apps\users\models.py:18
+#: apps/users/models.py:18
 msgid "date of birth"
 msgstr ""
 
-#: .\apps\users\models.py:19
+#: apps/users/models.py:19
 msgid "email address"
 msgstr "email manzil"
 
-#: .\apps\users\models.py:20
+#: apps/users/models.py:20
 msgid "phone number"
 msgstr ""
 
-#: .\apps\users\models.py:25
+#: apps/users/models.py:25
 msgid "users"
 msgstr ""
 
-#: .\core\settings\base.py:169
+#: core/settings/base.py:169
 msgid "English"
 msgstr ""
 
-#: .\core\settings\base.py:170
+#: core/settings/base.py:170
 msgid "Uzbek"
 msgstr ""
 
-#: .\core\settings\base.py:171
+#: core/settings/base.py:171
 msgid "Russian"
 msgstr ""
 

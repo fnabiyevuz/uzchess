@@ -16,7 +16,7 @@ class CartCreateApiView(CreateAPIView):
     def create(self, request, *args, **kwargs):
         try:
             cart, created = Cart.objects.get_or_create(user=request.user, status=CartStatus.PENDING)
-            cart_item = CartItem.objects.create(cart=cart, book_id=request.data["book_id"])
+            cart_item = CartItem.objects.create(cart=cart, book_id=request.data["book"])
             if cart and cart_item:
                 return Response({"result": "Cart and CartItem were successfully created!"})
             return Response({"error": "Error at Cart or CartItem creating"})

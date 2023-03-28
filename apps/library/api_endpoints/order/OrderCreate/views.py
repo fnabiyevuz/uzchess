@@ -18,7 +18,7 @@ class OrderCreateApiView(CreateAPIView):
         coupon = Coupon.objects.get(id=request.data["coupon"])
         cart = Cart.objects.get(id=request.data["cart"])
 
-        amount = cart.total * (100 + coupon.percent) / 100
+        amount = cart.total * (100 - coupon.percent) / 100
         request.data["payment_amount"] = amount
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)

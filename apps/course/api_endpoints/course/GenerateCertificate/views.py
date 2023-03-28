@@ -19,6 +19,7 @@ class GenerateCertificateAPIView(GenericAPIView):
 
         course = serializer.validated_data["course"]
         full_name = serializer.validated_data["full_name"]
+        print('kourse', course, full_name)
         if Certificate.objects.filter(course=course, user=request.user).exists():
             data = CertificateSerializer(
                 Certificate.objects.get(course=course, user=request.user), context={"request": request}

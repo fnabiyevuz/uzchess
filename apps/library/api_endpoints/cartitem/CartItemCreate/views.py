@@ -17,14 +17,14 @@ class CartItemCreateApiView(CreateAPIView):
         try:
             cart, created = Cart.objects.get_or_create(user=request.user, status=CartStatus.PENDING)
             cart_items = CartItem.objects.filter(cart=cart)
-            book = Book.objects.get(id=request.data["book_id"])
+            book = Book.objects.get(id=request.data["book"])
             for item in cart_items:
                 if item.book == book:
                     item.quantity += 1
                     item.save()
                     break
             else:
-                CartItem.objects.create(cart=cart, book_id=request.data["book_id"])
+                CartItem.objects.create(cart=cart, book_id=request.data["book"])
             return Response({"result": "CartItem successfully created!"})
         except Exception as e:
             return Response({"error": f"{e}"})

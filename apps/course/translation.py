@@ -1,31 +1,31 @@
-from modeltranslation.translator import translator, TranslationOptions
+from modeltranslation.translator import TranslationOptions, translator
 
-from .models import Course, Chapter, VideoLesson
+from .models import Chapter, Course, VideoLesson
 
 
 class CourseTranslationOptions(TranslationOptions):
-    fields = ('title',)
+    fields = ("title",)
 
 
 translator.register(Course, CourseTranslationOptions)
 
 
 class ChapterTranslationOptions(TranslationOptions):
-    fields = ('title',)
+    fields = ("title",)
 
 
 translator.register(Chapter, ChapterTranslationOptions)
 
 
 class VideoLessonTranslationOptions(TranslationOptions):
-    fields = ('title', 'body_text')
+    fields = ("title", "body_text")
 
 
 translator.register(VideoLesson, VideoLessonTranslationOptions)
 
 
 class CourseTranslationOptions(TranslationOptions):
-    fields = ('title',)
+    fields = ("title",)
 
 
 translator.register(Course, CourseTranslationOptions)

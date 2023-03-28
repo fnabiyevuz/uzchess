@@ -9,7 +9,7 @@ from apps.users.models import CustomUser
 class UserShortSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ["id", "full_name"]
+        fields = ["id", "full_name", "profile_pic"]
 
 
 class CourseCommentComplaintSerializer(serializers.ModelSerializer):

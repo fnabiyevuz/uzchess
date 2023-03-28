@@ -22,6 +22,3 @@ class VideoLessonTranslationOptions(TranslationOptions):
 
 
 translator.register(VideoLesson, VideoLessonTranslationOptions)
-
-
-

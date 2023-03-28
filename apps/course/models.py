@@ -6,6 +6,7 @@ from sorl.thumbnail import ImageField
 from apps.common.models import TimeStampedModel
 from apps.course.utils import randomize_certificate_number
 from apps.users.models import CustomUser
+
 from .choices import (COMPLAINT_TYPE_CHOICES, COURSE_COMMENT_STATUS_CHOICES,
                       LANGUAGE_CODE_CHOICES, PAYMENT_STATUS_CHOICES,
                       PAYMENT_TYPE_CHOICES)

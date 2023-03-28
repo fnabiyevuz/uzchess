@@ -130,10 +130,10 @@ class CourseCommentComplaintAdmin(admin.ModelAdmin):
 
 
 class PaymentAdmin(admin.ModelAdmin):
-    list_display = ("id", "usercourse", "amount", "payment_type", "payment_status", "payment_date")
+    list_display = ("id", "usercourse", "amount", "payment_type", "payment_status")
     list_display_links = ("id", "usercourse")
     search_fields = ("usercourse", "payment_type", "payment_date")
-    fields = ("usercourse", "amount", "payment_type", "payment_status", "payment_date", "created_at", "updated_at")
+    fields = ("usercourse", "amount", "payment_type", "payment_status", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at")
     save_on_top = True
 

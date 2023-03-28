@@ -6,6 +6,7 @@ from sorl.thumbnail import ImageField
 from apps.common.models import TimeStampedModel
 from apps.course.utils import randomize_certificate_number
 from apps.users.models import CustomUser
+
 from .choices import (COMPLAINT_TYPE_CHOICES, COURSE_COMMENT_STATUS_CHOICES,
                       LANGUAGE_CODE_CHOICES, PAYMENT_STATUS_CHOICES,
                       PAYMENT_TYPE_CHOICES)
@@ -164,8 +165,9 @@ class UserCourse(TimeStampedModel):
 
 
 class Payment(TimeStampedModel):
-    usercourse = models.ForeignKey(UserCourse, on_delete=models.CASCADE, related_name="user_course",
-                                   verbose_name=_("User Course"), null=True)
+    usercourse = models.ForeignKey(
+        UserCourse, on_delete=models.CASCADE, related_name="user_course", verbose_name=_("User Course"), null=True
+    )
     amount = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Amount"))
     payment_type = models.CharField(
         max_length=50, verbose_name=_("Payment type"), choices=PAYMENT_TYPE_CHOICES

@@ -1,5 +1,5 @@
-from django.utils.translation import gettext_lazy as _
 from django.db.models import Q
+from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 
@@ -14,14 +14,9 @@ class SendCodeSerializer(serializers.Serializer):
         phone_or_email = data.get("phone_or_email", None)
 
         # check if user exists with given phone_or_email
-        users = CustomUser.objects.filter(
-            Q(phone_number=phone_or_email) |
-            Q(email=phone_or_email)
-        )
+        users = CustomUser.objects.filter(Q(phone_number=phone_or_email) | Q(email=phone_or_email))
         if not users.exists():
-            raise ValidationError({
-                "phone_or_email": _("No user was found with this phone number/email")
-            })
+            raise ValidationError({"phone_or_email": _("No user was found with this phone number/email")})
 
-        data.update({'user': users.first()})
+        data.update({"user": users.first()})
         return data

@@ -14,7 +14,7 @@ class SendVerificationCodeSerializer(serializers.ModelSerializer):
             "phone_number",
             "email",
         )
-        ref_name = 'SendVerificationCodeRegistrationSerializer'
+        ref_name = "SendVerificationCodeRegistrationSerializer"
 
     def validate(self, data):
         # get variables

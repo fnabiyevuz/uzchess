@@ -1,9 +1,9 @@
 from django.core.cache import cache
 from django.utils.translation import gettext_lazy as _
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from drf_yasg.utils import swagger_auto_schema
 
 from apps.users.api_endpoints.registration.SetPassword.serializers import \
     SetPasswordSerializer
@@ -11,7 +11,6 @@ from apps.users.models import CustomUser
 
 
 class SetPasswordAPIView(APIView):
-
     @swagger_auto_schema(request_body=SetPasswordSerializer)
     def post(self, request, *arg, **kwargs):
         serializer = SetPasswordSerializer(data=request.data)

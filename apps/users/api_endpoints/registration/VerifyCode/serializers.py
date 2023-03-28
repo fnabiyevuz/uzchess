@@ -7,4 +7,4 @@ class VerifyCodeSerializer(serializers.Serializer):
     code = serializers.CharField(max_length=6)
 
     class Meta:
-        ref_name = 'VerifyCodeRegistrationSerializer'
+        ref_name = "VerifyCodeRegistrationSerializer"

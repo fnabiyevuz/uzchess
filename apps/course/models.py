@@ -61,9 +61,7 @@ class Course(TimeStampedModel):
     )
     level = models.ForeignKey(CourseLevel, on_delete=models.CASCADE, related_name="level", verbose_name=_("Level"))
 
-    # is_free = models.BooleanField(default=False, verbose_name=_("Is Free"))
-    # is_active = models.BooleanField(default=True, verbose_name=_("Is Active"))
-    # type = models.CharField(max_length=63, choices=CourseType.choices, verbose_name=_("Type"))
+    is_free = models.BooleanField(default=False, verbose_name=_("Is Free"))
 
     class Meta:
         verbose_name = _("Course")
@@ -109,10 +107,9 @@ class VideoUserViews(TimeStampedModel):
     video = models.ForeignKey(
         VideoLesson, on_delete=models.CASCADE, related_name="user_video_views", verbose_name=_("Video")
     )
-    viewed_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Viewed at"))
-    last_watched_time = models.DurationField(verbose_name=_("Last Watched Time"))
+    last_watched_time = models.DurationField(verbose_name=_("Last Watched Time"), blank=True, null=True)
     is_finished = models.BooleanField(default=False, verbose_name=_("Is Finished"))
-    progress = models.IntegerField(verbose_name=_("Progress"))  # 0-100 foizlarda
+    progress = models.IntegerField(verbose_name=_("Progress"), blank=True, null=True)  # 0-100 foizlarda
 
     class Meta:
         verbose_name = _("Video user view")
@@ -151,7 +148,7 @@ class CourseCommentComplaint(TimeStampedModel):
         CustomUser, on_delete=models.CASCADE, related_name="coursecommentcomplaint_user", verbose_name=_("User")
     )
     complaint_type = models.CharField(
-        max_length=50, verbose_name=_("Complaint type"), choices=COMPLAINT_TYPE_CHOICES
+        max_length=50, verbose_name=_("Complaint type"), choices=COMPLAINT_TYPE_CHOICES, blank=True, null=True
     )  # static choice 1= spam, 2=offensive, 3=other
     complaint_text = models.TextField(verbose_name=_("Complaint text"))
 
@@ -175,14 +172,14 @@ class Payment(TimeStampedModel):
     payment_status = models.CharField(
         max_length=50, verbose_name=_("Payment status"), choices=PAYMENT_STATUS_CHOICES
     )  # static choice 1=success, 2=failed 3=moderating
-    payment_date = models.DateTimeField(verbose_name=_("Payment date"))
+    payment_date = models.DateTimeField(verbose_name=_("Payment date"), auto_now_add=True)
 
     class Meta:
         verbose_name = _("Payment")
         verbose_name_plural = _("Payments")
 
     def __str__(self):
-        return self.payment_status
+        return str(self.id)
 
 
 class UserCourse(TimeStampedModel):

@@ -4,8 +4,8 @@ from django.utils.safestring import mark_safe
 # Register your models here.
 from apps.course.models import (Certificate, Chapter, Course, CourseCategory,
                                 CourseComment, CourseCommentComplaint,
-                                CourseLevel, Payment, UserCourse, VideoLesson,
-                                VideoUserViews, FavouriteCourse)
+                                CourseLevel, FavouriteCourse, Payment,
+                                UserCourse, VideoLesson, VideoUserViews)
 
 
 class CourseCategoryAdmin(admin.ModelAdmin):
@@ -78,13 +78,13 @@ class CourseAdmin(admin.ModelAdmin):
 
 
 class ChapterAdmin(admin.ModelAdmin):
-    list_display = ("id", "title")
+    list_display = ("id", "title", "course")
     list_display_links = ("id", "title")
     search_fields = ("title",)
     # list_editable = ('is_published',)
     # list_filter = ('gender',)
     # prepopulated_fields = {"slug": ("name",)}
-    fields = ("title", "created_at", "updated_at")
+    fields = ("title", "course", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at")
     save_on_top = True
 
@@ -118,13 +118,13 @@ class VideoLessonAdmin(admin.ModelAdmin):
 
 
 class VideoUserViewsAdmin(admin.ModelAdmin):
-    list_display = ("id", "user", "video", "viewed_at", "last_watched_time", "is_finished")
+    list_display = ("id", "user", "video", "last_watched_time", "is_finished")
     list_display_links = ("id", "user", "video")
     search_fields = ("user", "video")
     # list_editable = ('is_published',)
     # list_filter = ('gender',)
     # prepopulated_fields = {"slug": ("name",)}
-    fields = ("user", "video", "viewed_at", "last_watched_time", "is_finished", "progress", "created_at", "updated_at")
+    fields = ("user", "video", "last_watched_time", "is_finished", "progress", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at")
     save_on_top = True
 

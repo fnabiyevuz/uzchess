@@ -20,14 +20,9 @@ class CourseCommentCreateSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ["id", "author"]
 
-    # def create(self, validated_data):
-    #     if not UserCourse.objects.filter(
-    #         author=validated_data["author"], course=validated_data["course"], is_finished=True
-    #     ).exists():
-    #         raise serializers.ValidationError(detail={"course": _("You must finish the course")}, code="not_permitted")
-    #     if CourseComment.objects.filter(author=validated_data["author"], course=validated_data["course"]).exists():
-    #         raise serializers.ValidationError(detail={"comment": _("You can't comment twice")}, code="unique")
-    #     return super().create(validated_data)
-
-    # def get_is_mine(self, obj):
-    #     return obj.user == self.context["request"].user
+    def create(self, validated_data):
+        comments = CourseComment.objects.filter(author=validated_data["author"], course=validated_data["course"])
+        if len(comments) > 0:
+            raise serializers.ValidationError(detail={"comment": _("You can't comment twice")}, code="unique")
+        else:
+            return super().create(validated_data)

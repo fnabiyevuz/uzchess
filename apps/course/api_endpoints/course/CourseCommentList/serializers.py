@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from apps.course.models import CourseComment
+from apps.library.api_endpoints.BookList.serializers import AuthorSerializer
 from apps.users.models import CustomUser
 
 
@@ -11,16 +12,8 @@ class UserShortSerializer(serializers.ModelSerializer):
 
 
 class CourseCommentSerializer(serializers.ModelSerializer):
-    # is_mine = serializers.SerializerMethodField()
-    author = serializers.SerializerMethodField()
+    author = AuthorSerializer()
 
     class Meta:
         model = CourseComment
-        # fields = ["id", "author", "rating", "status", "comment_text", "is_mine"]
-        fields = ["id", "author", "rating", "status", "comment_text"]
-
-    # def get_is_mine(self, obj):
-    #     return obj.author == self.context["request"].author
-
-    def get_author(self, obj):
-        return UserShortSerializer(obj.author, context=self.context).data
+        fields = ["id", "author", "rating", "comment_text", "created_at"]

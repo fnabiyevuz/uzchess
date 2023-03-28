@@ -1,4 +1,3 @@
-from PIL.ImImagePlugin import number
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -11,7 +10,6 @@ from apps.users.models import CustomUser
 from .choices import (COMPLAINT_TYPE_CHOICES, COURSE_COMMENT_STATUS_CHOICES,
                       LANGUAGE_CODE_CHOICES, PAYMENT_STATUS_CHOICES,
                       PAYMENT_TYPE_CHOICES)
-
 
 
 class CourseCategory(TimeStampedModel):
@@ -167,7 +165,9 @@ class UserCourse(TimeStampedModel):
 
 
 class Payment(TimeStampedModel):
-    usercourse = models.ForeignKey(UserCourse, on_delete=models.CASCADE, related_name="user_course", verbose_name=_("User Course"), null=True)
+    usercourse = models.ForeignKey(
+        UserCourse, on_delete=models.CASCADE, related_name="user_course", verbose_name=_("User Course"), null=True
+    )
     amount = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Amount"))
     payment_type = models.CharField(
         max_length=50, verbose_name=_("Payment type"), choices=PAYMENT_TYPE_CHOICES
@@ -183,8 +183,6 @@ class Payment(TimeStampedModel):
 
     def __str__(self):
         return str(self.id)
-
-
 
 
 class Certificate(TimeStampedModel):

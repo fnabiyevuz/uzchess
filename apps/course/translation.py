@@ -1,6 +1,20 @@
 from modeltranslation.translator import TranslationOptions, translator
 
-from .models import Chapter, Course, VideoLesson
+from .models import Chapter, Course, VideoLesson, CourseCategory, CourseLevel
+
+
+class CourseCategoryTranslationOptions(TranslationOptions):
+    fields = ("title",)
+
+
+translator.register(CourseCategory, CourseCategoryTranslationOptions)
+
+
+class CourseLevelTranslationOptions(TranslationOptions):
+    fields = ("title",)
+
+
+translator.register(CourseLevel, CourseLevelTranslationOptions)
 
 
 class CourseTranslationOptions(TranslationOptions):

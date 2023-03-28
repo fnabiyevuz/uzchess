@@ -15,7 +15,6 @@ class PaymentSerializer(serializers.ModelSerializer):
             "payment_type",
             "payment_status",
             "amount",
-            "payment_date",
             "created_at",
         ]
 

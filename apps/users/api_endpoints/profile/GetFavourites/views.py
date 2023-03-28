@@ -1,8 +1,9 @@
 from rest_framework.generics import ListAPIView
 from rest_framework.permissions import IsAuthenticated
 
+from apps.library.api_endpoints.book.BookList.serializers import \
+    BookSerializer as BookListSerializer
 from apps.library.models import Book
-from apps.library.api_endpoints.BookList.serializers import BookSerializer as BookListSerializer
 
 
 class GetFavouriteBooksAPIView(ListAPIView):
@@ -18,4 +19,4 @@ class GetFavouriteBooksAPIView(ListAPIView):
         return favourite_books
 
 
-__all__ = ['GetFavouriteBooksAPIView']
+__all__ = ["GetFavouriteBooksAPIView"]

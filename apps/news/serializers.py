@@ -1,6 +1,7 @@
 from rest_framework.serializers import ModelSerializer, SerializerMethodField
 
-from apps.library.api_endpoints.BookList.serializers import AuthorSerializer
+from apps.library.api_endpoints.book.BookList.serializers import \
+    AuthorSerializer
 from apps.library.models import Book
 from apps.news.models import News
 

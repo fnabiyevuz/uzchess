@@ -1,17 +1,17 @@
 from django.urls import path
 
-from apps.library.api_endpoints.BookDetail.views import BookDetailApiView
-from apps.library.api_endpoints.BookList.views import BookListApiView
-from apps.library.api_endpoints.CartCreate.views import CartCreateApiView
-from apps.library.api_endpoints.CartDetail.views import CartDetailApiView
-from apps.library.api_endpoints.CartItemCreate.views import \
+from apps.library.api_endpoints.book.BookDetail import BookDetailApiView
+from apps.library.api_endpoints.book.BookList.views import BookListApiView
+from apps.library.api_endpoints.cart.CartCreate import CartCreateApiView
+from apps.library.api_endpoints.cart.CartDetail.views import CartDetailApiView
+from apps.library.api_endpoints.cart.CartUpdate.views import CartUpdateView
+from apps.library.api_endpoints.cartitem.CartItemCreate.views import \
     CartItemCreateApiView
-from apps.library.api_endpoints.CartItemUpdate.views import \
+from apps.library.api_endpoints.cartitem.CartItemUpdate import \
     CartItemUpdateApiView
-from apps.library.api_endpoints.CartUpdate.views import CartUpdateView
-from apps.library.api_endpoints.CouponRegistration.views import \
+from apps.library.api_endpoints.coupon.CouponRegistration.views import \
     CouponRegistrationView
-from apps.library.api_endpoints.OrderCreate.views import OrderCreateApiView
+from apps.library.api_endpoints.order.OrderCreate import OrderCreateApiView
 
 urlpatterns = [
     path("books/", BookListApiView.as_view(), name="book-lists"),

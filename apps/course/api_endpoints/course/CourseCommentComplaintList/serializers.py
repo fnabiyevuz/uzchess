@@ -6,15 +6,9 @@ from apps.course.models import CourseCommentComplaint
 from apps.users.models import CustomUser
 
 
-class UserShortSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CustomUser
-        fields = ["id", "full_name", "profile_pic"]
-
 
 class CourseCommentComplaintSerializer(serializers.ModelSerializer):
     is_mine = serializers.SerializerMethodField()
-    user = UserShortSerializer()
     comment = CourseCommentSerializer()
 
     class Meta:

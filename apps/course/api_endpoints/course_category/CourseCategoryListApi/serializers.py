@@ -8,6 +8,5 @@ class CourseCategoryListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CourseCategory
-        # fields = ["id", "title_uz", "title_ru", "title_en", "icon", "courses_count"]
 
-        fields = ["id", "title_uz", "title_ru", "title_en", "icon"]
+        fields = ["id", "title", "icon"]

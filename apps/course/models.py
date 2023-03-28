@@ -1,3 +1,4 @@
+from PIL.ImImagePlugin import number
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -12,15 +13,9 @@ from .choices import (COMPLAINT_TYPE_CHOICES, COURSE_COMMENT_STATUS_CHOICES,
                       PAYMENT_TYPE_CHOICES)
 
 
-# Create your models here.
-class CourseType(models.TextChoices):
-    COURSE_SALE = "course_sale", _("Course sale")
-
 
 class CourseCategory(TimeStampedModel):
-    title_uz = models.CharField(max_length=255, verbose_name=_("Title_uz"))
-    title_ru = models.CharField(max_length=255, verbose_name=_("Title_ru"))
-    title_en = models.CharField(max_length=255, verbose_name=_("Title_en"))
+    title = models.CharField(max_length=255, verbose_name=_("Title"))
     icon = ImageField(upload_to="categories", null=True, blank=True, verbose_name=_("Icon"))
 
     class Meta:
@@ -28,13 +23,11 @@ class CourseCategory(TimeStampedModel):
         verbose_name_plural = _("Categories")
 
     def __str__(self):
-        return self.title_uz
+        return self.title
 
 
 class CourseLevel(TimeStampedModel):
-    title_uz = models.CharField(max_length=255, verbose_name=_("Title_uz"))
-    title_ru = models.CharField(max_length=255, verbose_name=_("Title_ru"))
-    title_en = models.CharField(max_length=255, verbose_name=_("Title_en"))
+    title = models.CharField(max_length=255, verbose_name=_("Title"))
     icon = ImageField(upload_to="levels", null=True, blank=True, verbose_name=_("Icon"))
 
     class Meta:
@@ -42,7 +35,7 @@ class CourseLevel(TimeStampedModel):
         verbose_name_plural = _("Levels")
 
     def __str__(self):
-        return self.title_uz
+        return self.title
 
 
 class Course(TimeStampedModel):
@@ -160,11 +153,21 @@ class CourseCommentComplaint(TimeStampedModel):
         return self.user.full_name
 
 
+class UserCourse(TimeStampedModel):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="user_courses", verbose_name=_("User"))
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name="user_curses", verbose_name=_("Course"))
+    is_finished = models.BooleanField(default=False, verbose_name=_("Is Finished"))
+
+    def __str__(self):
+        return f"{self.user} - {self.course}"
+
+    class Meta:
+        verbose_name = _("User Course")
+        verbose_name_plural = _("User Courses")
+
+
 class Payment(TimeStampedModel):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="user_payment", verbose_name=_("User"))
-    course = models.ForeignKey(
-        Course, on_delete=models.CASCADE, related_name="course_payment", verbose_name=_("Course")
-    )
+    usercourse = models.ForeignKey(UserCourse, on_delete=models.CASCADE, related_name="user_course", verbose_name=_("User Course"), null=True)
     amount = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Amount"))
     payment_type = models.CharField(
         max_length=50, verbose_name=_("Payment type"), choices=PAYMENT_TYPE_CHOICES
@@ -182,20 +185,6 @@ class Payment(TimeStampedModel):
         return str(self.id)
 
 
-class UserCourse(TimeStampedModel):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="user_courses", verbose_name=_("User"))
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name="user_courses", verbose_name=_("Course"))
-    is_finished = models.BooleanField(default=False, verbose_name=_("Is Finished"))
-    finished_at = models.DateTimeField(null=True, blank=True, verbose_name=_("Finished At"))
-
-    # order = models.OneToOneField("payment.Order", on_delete=models.CASCADE, verbose_name=_("Order"))
-
-    def __str__(self):
-        return f"{self.user} - {self.course}"
-
-    class Meta:
-        verbose_name = _("User Course")
-        verbose_name_plural = _("User Courses")
 
 
 class Certificate(TimeStampedModel):

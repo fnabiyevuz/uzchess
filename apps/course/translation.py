@@ -24,8 +24,4 @@ class VideoLessonTranslationOptions(TranslationOptions):
 translator.register(VideoLesson, VideoLessonTranslationOptions)
 
 
-class CourseTranslationOptions(TranslationOptions):
-    fields = ("title",)
 
-
-translator.register(Course, CourseTranslationOptions)

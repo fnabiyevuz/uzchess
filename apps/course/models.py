@@ -6,7 +6,6 @@ from sorl.thumbnail import ImageField
 from apps.common.models import TimeStampedModel
 from apps.course.utils import randomize_certificate_number
 from apps.users.models import CustomUser
-
 from .choices import (COMPLAINT_TYPE_CHOICES, COURSE_COMMENT_STATUS_CHOICES,
                       LANGUAGE_CODE_CHOICES, PAYMENT_STATUS_CHOICES,
                       PAYMENT_TYPE_CHOICES)
@@ -61,9 +60,7 @@ class Course(TimeStampedModel):
     )
     level = models.ForeignKey(CourseLevel, on_delete=models.CASCADE, related_name="level", verbose_name=_("Level"))
 
-    # is_free = models.BooleanField(default=False, verbose_name=_("Is Free"))
-    # is_active = models.BooleanField(default=True, verbose_name=_("Is Active"))
-    # type = models.CharField(max_length=63, choices=CourseType.choices, verbose_name=_("Type"))
+    is_free = models.BooleanField(default=False, verbose_name=_("Is Free"))
 
     class Meta:
         verbose_name = _("Course")

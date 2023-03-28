@@ -6,14 +6,12 @@ from apps.course.models import Payment
 
 
 class PaymentSerializer(serializers.ModelSerializer):
-    course = CourseListSerializer()
 
     class Meta:
         model = Payment
         fields = [
             "id",
-            "user",
-            "course",
+            "usercourse",
             "payment_type",
             "payment_status",
             "amount",

@@ -1,7 +1,6 @@
 from rest_framework import serializers
 
 from apps.course.models import CourseComment
-from apps.library.api_endpoints.BookList.serializers import AuthorSerializer
 from apps.users.models import CustomUser
 
 
@@ -12,7 +11,7 @@ class UserShortSerializer(serializers.ModelSerializer):
 
 
 class CourseCommentSerializer(serializers.ModelSerializer):
-    author = AuthorSerializer()
+    author = UserShortSerializer()
 
     class Meta:
         model = CourseComment

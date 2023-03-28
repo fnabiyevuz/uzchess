@@ -2,6 +2,7 @@ import datetime
 
 import pytz
 from django.http import Http404
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -13,11 +14,11 @@ from apps.library.models import Cart, Coupon
 
 utc = pytz.UTC
 
-
 class CouponRegistrationView(APIView):
     permission_classes = [IsAuthenticated]
     serializer_class = CouponSerializer
 
+    @swagger_auto_schema(request_body=CouponSerializer)
     def post(self, request, format=None):
         coupon_code = request.data["coupon_code"]
         try:

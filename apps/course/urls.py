@@ -42,4 +42,5 @@ urlpatterns = [
     # payment
     path("PaymentList", course.PaymentListAPIView.as_view(), name="payment-list"),
     path("PaymentCreate/<int:course_id>", course.PaymentCreateAPIView.as_view(), name="payment-create"),
+    path("UserCourseCreateApiView", course.UserCourseCreateApiView.as_view(), name="payment-create"),
 ]

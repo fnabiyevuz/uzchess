@@ -10,3 +10,4 @@ from .GenerateCertificate import *  # noqa
 from .Payment import *  # noqa
 from .PaymentCreate import *  # noqa
 from .VideoUserViewCreate import *  # noqa
+from .UserCourseCreate import *  # noqa

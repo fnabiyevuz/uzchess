@@ -118,13 +118,13 @@ class VideoLessonAdmin(admin.ModelAdmin):
 
 
 class VideoUserViewsAdmin(admin.ModelAdmin):
-    list_display = ("id", "user", "video", "viewed_at", "last_watched_time", "is_finished")
+    list_display = ("id", "user", "video", "last_watched_time", "is_finished")
     list_display_links = ("id", "user", "video")
     search_fields = ("user", "video")
     # list_editable = ('is_published',)
     # list_filter = ('gender',)
     # prepopulated_fields = {"slug": ("name",)}
-    fields = ("user", "video", "viewed_at", "last_watched_time", "is_finished", "progress", "created_at", "updated_at")
+    fields = ("user", "video", "last_watched_time", "is_finished", "progress", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at")
     save_on_top = True
 

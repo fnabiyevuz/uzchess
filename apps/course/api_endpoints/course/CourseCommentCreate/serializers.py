@@ -26,6 +26,3 @@ class CourseCommentCreateSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(detail={"comment": _("You can't comment twice")}, code="unique")
         else:
             return super().create(validated_data)
-
-
-

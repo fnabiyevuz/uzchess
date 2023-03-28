@@ -16,10 +16,11 @@ urlpatterns = [
     path("FavouriteCourseList", course.FavouriteCourseListAPIView.as_view(), name="favourite-course-list"),
     # course video lessons
     path(
-        "CourseVideoLessonList/<int:chapter_id>",
-        course.CourseVideoLessonListAPIView.as_view(),
-        name="course-video-lesson-list"),
-
+        "CourseVideoLessonDetail/<int:pk>",
+        course.CourseVideoLessonDetailAPIView.as_view(),
+        name="course-video-lesson-list",
+    ),
+    path("VideoUserViewCreate/", course.VideoUserViewCreateAPIView.as_view(), name="video-user-view-create"),
     # course comments
     path("CourseCommentList/<int:course_id>", course.CourseCommentListAPIView.as_view(), name="course-comment-list"),
     path(

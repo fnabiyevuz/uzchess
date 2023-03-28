@@ -6,6 +6,7 @@ from sorl.thumbnail import ImageField
 from apps.common.models import TimeStampedModel
 from apps.course.utils import randomize_certificate_number
 from apps.users.models import CustomUser
+
 from .choices import (COMPLAINT_TYPE_CHOICES, COURSE_COMMENT_STATUS_CHOICES,
                       LANGUAGE_CODE_CHOICES, PAYMENT_STATUS_CHOICES,
                       PAYMENT_TYPE_CHOICES)
@@ -100,7 +101,6 @@ class VideoLesson(TimeStampedModel):
     def __str__(self):
         return self.title
 
-
 class VideoUserViews(TimeStampedModel):
     user = models.ForeignKey(
         CustomUser, on_delete=models.CASCADE, related_name="user_video_views", verbose_name=_("User")
@@ -108,10 +108,9 @@ class VideoUserViews(TimeStampedModel):
     video = models.ForeignKey(
         VideoLesson, on_delete=models.CASCADE, related_name="user_video_views", verbose_name=_("Video")
     )
-    viewed_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Viewed at"))
-    last_watched_time = models.DurationField(verbose_name=_("Last Watched Time"))
+    last_watched_time = models.DurationField(verbose_name=_("Last Watched Time"), blank=True, null=True)
     is_finished = models.BooleanField(default=False, verbose_name=_("Is Finished"))
-    progress = models.IntegerField(verbose_name=_("Progress"))  # 0-100 foizlarda
+    progress = models.IntegerField(verbose_name=_("Progress"), blank=True, null=True)  # 0-100 foizlarda
 
     class Meta:
         verbose_name = _("Video user view")
@@ -181,7 +180,7 @@ class Payment(TimeStampedModel):
         verbose_name_plural = _("Payments")
 
     def __str__(self):
-        return self.payment_status
+        return str(self.id)
 
 
 class UserCourse(TimeStampedModel):

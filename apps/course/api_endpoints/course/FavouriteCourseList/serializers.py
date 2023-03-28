@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from apps.course.models import FavouriteCourse, Course
+from apps.course.models import Course, FavouriteCourse
 from apps.users.models import CustomUser
 
 

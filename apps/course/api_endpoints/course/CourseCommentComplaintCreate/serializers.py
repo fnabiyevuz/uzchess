@@ -28,8 +28,7 @@ class CourseCommentComplaintCreateSerializer(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
-        comments = CourseCommentComplaint.objects.filter(user=validated_data["user"],
-                                                         comment=validated_data["comment"])
+        comments = CourseCommentComplaint.objects.filter(user=validated_data["user"], comment=validated_data["comment"])
         if len(comments) > 0:
             raise serializers.ValidationError(detail={"comment": _("You can't comment twice")}, code="unique")
         else:

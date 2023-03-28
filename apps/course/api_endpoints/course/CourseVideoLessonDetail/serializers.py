@@ -13,25 +13,19 @@ class ChapterSerializer(serializers.ModelSerializer):
             "title",
         ]
 
+
 class CourseVideoLessonListShortSerializer(serializers.ModelSerializer):
     is_viewed = serializers.SerializerMethodField()
 
     def get_is_viewed(self, obj):
-        if VideoUserViews.objects.filter(user=self.context['request'].user, video=obj, is_finished=True).exists():
+        if VideoUserViews.objects.filter(user=self.context["request"].user, video=obj, is_finished=True).exists():
             return True
         else:
             return False
 
-
     class Meta:
         model = VideoLesson
-        fields = [
-            "id",
-            "title",
-            "video_path",
-            "video_thumbnail",
-            "is_viewed"
-        ]
+        fields = ["id", "title", "video_path", "video_thumbnail", "is_viewed"]
 
 
 class CourseVideoLessonListSerializer(serializers.ModelSerializer):
@@ -74,9 +68,10 @@ class CourseVideoLessonListSerializer(serializers.ModelSerializer):
     #
     #     return duration_string(obj.get_user_last_watched_time(user))
 
-
     def get_lessons(self, obj):
         print(self.context["request"])
         videos = obj.chapter.chapter.all()
-        serializer = CourseVideoLessonListShortSerializer(videos, many=True, context={"request": self.context["request"]})
+        serializer = CourseVideoLessonListShortSerializer(
+            videos, many=True, context={"request": self.context["request"]}
+        )
         return serializer.data

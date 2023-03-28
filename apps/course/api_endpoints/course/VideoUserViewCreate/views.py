@@ -2,6 +2,7 @@ from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 
 from apps.course.models import VideoUserViews
+
 from .serializers import VideoUserViewCreateSerializer
 
 

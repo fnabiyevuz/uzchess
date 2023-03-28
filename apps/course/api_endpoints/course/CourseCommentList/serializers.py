@@ -16,5 +16,4 @@ class CourseCommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CourseComment
-        fields = ["id", "author", "rating", "comment_text", 'created_at']
-
+        fields = ["id", "author", "rating", "comment_text", "created_at"]

@@ -1,6 +1,7 @@
 from rest_framework import generics
 
 from apps.course.models import Course
+
 from .serializers import CourseDetailSerializer
 
 

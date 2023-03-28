@@ -13,13 +13,13 @@ from apps.course.models import (Chapter, Course, CourseCategory, CourseLevel,
 class CourseCategoryShortSerializer(serializers.ModelSerializer):
     class Meta:
         model = CourseCategory
-        fields = ["id", "title_uz", "title_ru", "title_en", "icon"]
+        fields = ["id", "title", "icon"]
 
 
 class CourseLevelSerializer(serializers.ModelSerializer):
     class Meta:
         model = CourseLevel
-        fields = ["id", "title_uz", "title_ru", "title_en", "icon"]
+        fields = ["id", "title", "icon"]
 
 
 class VideoLessonForCourseDetailSerializer(serializers.ModelSerializer):

@@ -9,13 +9,10 @@ from apps.course.models import (Certificate, Chapter, Course, CourseCategory,
 
 
 class CourseCategoryAdmin(admin.ModelAdmin):
-    list_display = ("id", "title_uz", "title_en", "title_ru", "get_html_photo")
-    list_display_links = ("id", "title_uz", "title_en")
-    search_fields = ("title_uz", "title_en", "title_ru")
-    # list_editable = ('is_published',)
-    # list_filter = ('gender',)
-    # prepopulated_fields = {"slug": ("name",)}
-    fields = ("title_uz", "title_en", "title_ru", "icon", "get_html_photo", "created_at", "updated_at")
+    list_display = ("id", "title", "get_html_photo")
+    list_display_links = ("id", "title")
+    search_fields = ("title",)
+    fields = ("title", "icon", "get_html_photo", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at", "get_html_photo")
     save_on_top = True
 
@@ -27,13 +24,10 @@ class CourseCategoryAdmin(admin.ModelAdmin):
 
 
 class CourseLevelAdmin(admin.ModelAdmin):
-    list_display = ("id", "title_uz", "title_en", "title_ru", "get_html_photo")
-    list_display_links = ("id", "title_uz", "title_en")
-    search_fields = ("title_uz", "title_en", "title_ru")
-    # list_editable = ('is_published',)
-    # list_filter = ('gender',)
-    # prepopulated_fields = {"slug": ("name",)}
-    fields = ("title_uz", "title_en", "title_ru", "icon", "get_html_photo", "created_at", "updated_at")
+    list_display = ("id", "title", "get_html_photo")
+    list_display_links = ("id", "title")
+    search_fields = ("title",)
+    fields = ("title", "icon", "get_html_photo", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at", "get_html_photo")
     save_on_top = True
 
@@ -58,9 +52,6 @@ class CourseAdmin(admin.ModelAdmin):
     )
     list_display_links = ("id", "title", "author")
     search_fields = ("title", "author")
-    # list_editable = ('is_published',)
-    # list_filter = ('gender',)
-    # prepopulated_fields = {"slug": ("title",)}
     fields = (
         "title",
         "author",
@@ -81,9 +72,6 @@ class ChapterAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "course")
     list_display_links = ("id", "title")
     search_fields = ("title",)
-    # list_editable = ('is_published',)
-    # list_filter = ('gender',)
-    # prepopulated_fields = {"slug": ("name",)}
     fields = ("title", "course", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at")
     save_on_top = True
@@ -93,9 +81,6 @@ class VideoLessonAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "chapter", "video_duration", "get_html_photo")
     list_display_links = ("id", "title", "chapter")
     search_fields = ("title", "chapter")
-    # list_editable = ('is_published',)
-    # list_filter = ('gender',)
-    # prepopulated_fields = {"slug": ("name",)}
     fields = (
         "title",
         "body_text",
@@ -121,9 +106,6 @@ class VideoUserViewsAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "video", "last_watched_time", "is_finished")
     list_display_links = ("id", "user", "video")
     search_fields = ("user", "video")
-    # list_editable = ('is_published',)
-    # list_filter = ('gender',)
-    # prepopulated_fields = {"slug": ("name",)}
     fields = ("user", "video", "last_watched_time", "is_finished", "progress", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at")
     save_on_top = True
@@ -133,9 +115,6 @@ class CourseCommentAdmin(admin.ModelAdmin):
     list_display = ("id", "author", "rating", "status", "course")
     list_display_links = ("id", "author", "course")
     search_fields = ("author", "course")
-    # list_editable = ('is_published',)
-    # list_filter = ('gender',)
-    # prepopulated_fields = {"slug": ("name",)}
     fields = ("author", "rating", "status", "comment_text", "course", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at")
     save_on_top = True
@@ -145,34 +124,25 @@ class CourseCommentComplaintAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "complaint_type")
     list_display_links = ("id", "user", "complaint_type")
     search_fields = ("user", "complaint_type")
-    # list_editable = ('is_published',)
-    # list_filter = ('gender',)
-    # prepopulated_fields = {"slug": ("name",)}
     fields = ("user", "comment", "complaint_type", "complaint_text", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at")
     save_on_top = True
 
 
 class PaymentAdmin(admin.ModelAdmin):
-    list_display = ("id", "user", "course", "amount", "payment_type", "payment_status", "payment_date")
-    list_display_links = ("id", "user", "course")
-    search_fields = ("user", "course", "payment_type", "payment_date")
-    # list_editable = ('is_published',)
-    # list_filter = ('gender',)
-    # prepopulated_fields = {"slug": ("name",)}
-    fields = ("user", "course", "amount", "payment_type", "payment_status", "payment_date", "created_at", "updated_at")
+    list_display = ("id", "usercourse", "amount", "payment_type", "payment_status", "payment_date")
+    list_display_links = ("id", "usercourse")
+    search_fields = ("usercourse", "payment_type", "payment_date")
+    fields = ("usercourse", "amount", "payment_type", "payment_status", "payment_date", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at")
     save_on_top = True
 
 
 class UserCourseAdmin(admin.ModelAdmin):
-    list_display = ("id", "user", "course", "is_finished", "finished_at")
+    list_display = ("id", "user", "course", "is_finished")
     list_display_links = ("id", "user", "course")
     search_fields = ("user", "course")
-    # list_editable = ('is_published',)
-    # list_filter = ('gender',)
-    # prepopulated_fields = {"slug": ("name",)}
-    fields = ("user", "course", "is_finished", "finished_at", "created_at", "updated_at")
+    fields = ("user", "course", "is_finished", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at")
     save_on_top = True
 
@@ -181,9 +151,6 @@ class CertificateAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "course", "full_name", "cid", "get_html_photo")
     list_display_links = ("id", "user", "course", "full_name")
     search_fields = ("user", "course", "full_name", "cid")
-    # list_editable = ('is_published',)
-    # list_filter = ('gender',)
-    # prepopulated_fields = {"slug": ("name",)}
     fields = ("user", "course", "full_name", "cid", "file", "image", "get_html_photo", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at", "get_html_photo")
     save_on_top = True
@@ -199,9 +166,6 @@ class FavouriteCourseAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "course")
     list_display_links = ("id", "user", "course")
     search_fields = ("user", "course")
-    # list_editable = ('is_published',)
-    # list_filter = ('gender',)
-    # prepopulated_fields = {"slug": ("name",)}
     fields = ("user", "course", "created_at", "updated_at")
     readonly_fields = ("created_at", "updated_at")
     save_on_top = True

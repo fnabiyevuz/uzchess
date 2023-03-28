@@ -6,7 +6,7 @@ from apps.course.models import Course, CourseCategory
 class CourseCategorySerializer(ModelSerializer):
     class Meta:
         model = CourseCategory
-        fields = ["id", "title_uz", "title_ru", "title_en", "icon"]
+        fields = ["id", "title", "icon"]
 
 
 class CourseListSerializer(ModelSerializer):

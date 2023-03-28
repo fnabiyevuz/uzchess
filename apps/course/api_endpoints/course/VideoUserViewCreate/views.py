@@ -10,6 +10,3 @@ class VideoUserViewCreateAPIView(generics.CreateAPIView):
     serializer_class = VideoUserViewCreateSerializer
     queryset = VideoUserViews.objects.all()
     permission_classes = [IsAuthenticated]
-
-    # def perform_create(self, serializer):
-    #     serializer.save(user=self.request.user)
